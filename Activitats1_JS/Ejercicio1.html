@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lectura de números</title>
+</head>
+<body>
+    <script>
+        let num = prompt("Escriba el número que le apetezca: ");
+      // Esa condición sin el diferente devuelve false, entonces si es un 
+      // es un numero deberia devolverme true, por eso el diferente de.
+      // Entonces si es un numero me devolvera true y se mostrara
+      // el numero el mensaje con el numero.
+         if(!isNaN(num)){
+            alert(`Tu numero es: ${num}`);
+         }else{
+            alert(`Esto no es un numero: ${num}`);
+        }
+         
+      
+       
+    </script>
+</body>
+</html>
