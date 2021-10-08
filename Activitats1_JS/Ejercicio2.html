@@ -6,8 +6,9 @@
 </head>
 <body>
     <script>
+
         // arary
-     let hex = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'];
+    hex =  new Array('0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F');
 
      // para poder obtener el numero de posibilidades restandose (max-min)
      // Multiplico el numero de posibilidades por el numero aleatorio con la funcion Math.random
@@ -22,16 +23,19 @@
 
     }
     
-   
 
-       // generar numeros random https://desarrolloweb.com/articulos/763.php 
-       // generar colores random https://desarrolloweb.com/articulos/2005.php 
-       // metodo Math.floor https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math/floor 
-    
        
+    
+    
+    for(i=0;i<6;i++){
+
     posicionArray= random(0,hex.length);
 
-    randomHex=hex[posicionArray];
+    document.body.style.backgroundColor='#'+=hex[posicionArray];
+
+    }
+
+
 
     </script>
 </body>
