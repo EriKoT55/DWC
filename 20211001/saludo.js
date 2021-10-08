@@ -1,1 +1,0 @@
-document.write("Hola desde un archivo ecterno en el Navegadores")
