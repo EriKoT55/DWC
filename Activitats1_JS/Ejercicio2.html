@@ -7,35 +7,11 @@
 <body>
     <script>
 
-        // arary
-    hex =  new Array('0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F');
+     
 
-     // para poder obtener el numero de posibilidades restandose (max-min)
-     // Multiplico el numero de posibilidades por el numero aleatorio con la funcion Math.random
-     // Pongo Math.floor para que no me saque los decimales y así obtener solo los enteros.
-     // Ahora el numero estaria entre 0 y el numero de posibilidades(max-min) por ello le 
-     // sumamos el minimo(min), así ya estara dentro del rango deseado.
-    function random(min,max){
-
-       let randomizer = (Math.floor(Math.random() * (max-min))+min); 
+document.body.style.backgroundColor=(Math.floor(Math.random()*100*100*100)); 
         
-       return randomizer;
-
-    }
     
-       
-    
-    
-    for(i=0;i<6;i++){
-
-    posicionArray= random(0,hex.length);
-
-    
-
-    }
-
-    document.body.style.backgroundColor='#'+=hex[posicionArray];
-
     </script>
 </body>
 </html>
