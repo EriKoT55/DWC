@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Asteriscos2.1</title>
-
+    <style>
+        body{
+            font-family:'Courier New', Courier, monospace;
+        }
+    </style>
 </head>
 <body>
     <script>
@@ -15,17 +19,20 @@
 
         /*1*/for(let i=0;i<=num;i++){
                 document.write('<br>');// br hace lo mismo, me lo descoloca 
-            
-
+             
             /*3*/for(let j=0;j<i;j++){
-                    document.write('&nbsp;');// cuando pongo el color se deforma la piramide
+                    document.write('&nbsp;');
                 }
-            /*2*/for(let k=num;k>=i;k--){
-                    document.write('\n*');
-                }
+               
             /*4*/for(let e=num;e>i;e--){
-                    document.write('\n*');
+                    document.write('*');
                 }
+            
+            /*2*/for(let k=num;k>=i;k--){
+                    document.write('*');
+                }
+            
+            
             }
 
         }
