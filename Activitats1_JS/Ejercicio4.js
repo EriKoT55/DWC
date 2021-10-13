@@ -7,7 +7,7 @@ let isNum=false;
 let acertado=false;
 
 let volver= confirm("¿Te gustaria jugar?");
-var num=prompt("Adivine el número: ");
+
 
 
 while(volver==true){
@@ -16,7 +16,7 @@ while(volver==true){
     alert(random);
     num=prompt("Adivine el número: ");
     
-    while(isNum==false){
+    while(isNum==false){//Con este bucle mira si es un numero o no
         if(isNaN(num)){
             alert("No es un número");   
             num=prompt("Ponga un número, por favor: ");
