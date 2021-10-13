@@ -3,10 +3,10 @@
 var random = Math.floor(Math.random()*101);
 
 var numIntentos=0;
-let isNum=false;
-let acertado=false;
+let isNum=false;// entrar en el segundo bucle, mirar si es un num o letra
+let acertado=false;// entrar en el tercer bucle, mirar si has acertado el randomnum
 
-let volver= confirm("¿Te gustaria jugar?");
+let volver= confirm("¿Te gustaria jugar?");// entrar en el primer bucle
 
 
 
@@ -17,12 +17,15 @@ while(volver==true){
     num=prompt("Adivine el número: ");
     
     while(isNum==false){//Con este bucle mira si es un numero o no
-        if(isNaN(num)){
+        if(isNaN(num)){// si no es un numero, te preguntara hasta que sea true
+            //o sea, hasta que le introduzcas un num, ahí sera cuando vaya al else if
+            //de abajo
             alert("No es un número");   
             num=prompt("Ponga un número, por favor: ");
             isNum=false;
         }
-        else if(!isNaN(num)){
+        else if(!isNaN(num)){// Aqui comprobara si he cerrado la ventana o si no entrara en 
+            //el bucle
             if(num==null){
                 alert("Se cerro el juego");
             }else{
