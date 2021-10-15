@@ -8,15 +8,27 @@
     <script>
         var factorial=1;
         
-        let num=prompt("Ponga un numero entero positivo:");
-        if(isNan(num)){
-            alert("Ponga un  numero");
-        }
-        for(var i=1;i<=num;i++){
-            factorial*=i;
-        }
 
-        alert(`Este es el numero factorial ${factorial} del numero que has introducido ${num}. `);
+        let num=prompt("Ponga un numero entero positivo:");
+        
+        
+            if(isNaN(num)){
+                alert("No se introdujo un numero");
+               
+            }else if(num<0){
+                alert("El numero introducido no es valido");
+            }else{
+
+                for(var i=1;i<=num;i++){
+                    factorial*=i;
+                }
+                alert(`Este es el numero factorial ${factorial} del numero que has introducido ${num}. `);
+            }
+        
+        
+        
+
+       
     </script>
 </body>
 </html>
