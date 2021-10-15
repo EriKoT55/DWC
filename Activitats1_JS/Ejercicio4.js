@@ -13,7 +13,7 @@ let volver= confirm("¿Te gustaria jugar?");// entrar en el primer bucle
 while(volver==true){
     numIntentos=0;// Para que reinicie el contador cada vez que juego
     random = Math.floor(Math.random()*101);// Para que ponga un num aleatorio cada vez que juego
-    alert(random);
+    
     num=prompt("Adivine el número: ");
 
     isNum=false;// Para que entre al bucle al volver a jugar

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var factorial=1;
+        
+        let num=prompt("Ponga un numero entero positivo:");
+        if(isNan(num)){
+            alert("Ponga un  numero");
+        }
+        for(var i=1;i<=num;i++){
+            factorial*=i;
+        }
+
+        alert(`Este es el numero factorial ${factorial} del numero que has introducido ${num}. `);
+    </script>
+</body>
+</html>
