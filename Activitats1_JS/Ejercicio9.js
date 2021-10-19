@@ -4,7 +4,7 @@ var azul;
 var izq;
 var arriba;
 
-for(let i=1;i<2000;i++){
+for(let i=0;i<5000;i++){
     
     rojo=parseInt(Math.random()*256);
     verde= parseInt(Math.random()*256);
@@ -12,6 +12,9 @@ for(let i=1;i<2000;i++){
     altura=parseInt(Math.random()*100);
     izq=parseInt(Math.random()*100);
 
-    <div id='fondo'></div>
+    document.write(`<div id='fondo' `+`style='width:50px;height:50px; 
+    background-color:rgb(${rojo},${verde},${azul});` +
+    `left:${izq}%;top:${altura}%; margin:0px; border:1px solid black; position:absolute'></div>`);
 
+    
 }
