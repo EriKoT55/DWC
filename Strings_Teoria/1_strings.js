@@ -132,7 +132,7 @@ console.log(texto16.substr(3)); // Salida: o es una estructura estática
 
 // Método SPLIT
 // Divide el texto indicado en un array de textos
-// Si no se pasa parámetro, genera un array dónce cada elemento
+// Si no se pasa parámetro, genera un array dónde cada elemento
 // del array será cada carácter del string.
 // Si añadimos un segundo parámetro, podemos indicar el número
 // máximo de divisiones.

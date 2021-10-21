@@ -1,0 +1,1 @@
+let texto='Esto es un texto ';
