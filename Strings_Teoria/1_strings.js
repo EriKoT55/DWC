@@ -18,10 +18,10 @@ if (texto1 == texto2) {
     (0): texto4 = texto3
 */
 
-let texto3='Oso';
-let texto4='Ñu';
+let texto3 = 'Oso';
+let texto4 = 'Ñu';
 console.log(texto3.localeCompare(texto4));
-console.log(texto3.localeCompare(texto4,'es')); // Salida: 1 ->
+console.log(texto3.localeCompare(texto4, 'es')); // Salida: 1 ->
 
 // Método  LENGTH
 // Devuelve el tamaño de un texto
@@ -87,20 +87,20 @@ console.log(texto11.endsWith('estructura', 22)) // Salida: true
 
 let texto12 = 'Esto es un texto estático';
 console.log(texto12.startsWith('Esto')); // Salida: true
-console.log(texto12.startsWith('es',5)); // Salida: true
+console.log(texto12.startsWith('es', 5)); // Salida: true
 
 // Método REPLACE
 // Busca el texto indicado en el primer parámetro y lo reemplaza
 // por el texto del segundo parámetro.
 
 let texto13 = 'Esto es una estructura estática';
-console.log(texto13.replace('st','xxtt')); //Salida: Exxtto es una estructura estática
+console.log(texto13.replace('st', 'xxtt')); //Salida: Exxtto es una estructura estática
 
 // Método TRIM
 // No necesita argumentos.
 // Elimina los espacios en blanco a derecha e izquierda del texto.
 
-let texto14 = '    texto con muchos espacios    '; 
+let texto14 = '    texto con muchos espacios    ';
 console.log("-" + texto14 + "-"); // Salida: -    texto con muchos espacios    -
 console.log("-" + texto14.trim() + "-"); // Salida: -texto con muchos espacios-
 
@@ -113,8 +113,8 @@ console.log("-" + texto14.trim() + "-"); // Salida: -texto con muchos espacios-
 // El primer carácter comienza en la posición 0.
 
 let texto15 = 'Esto es una estructura estática';
-console.log(texto15.slice(3,10)); // Salida: o es un
-console.log(texto15.slice(3,-5)); // Salida: o es una estructura est
+console.log(texto15.slice(3, 10)); // Salida: o es un
+console.log(texto15.slice(3, -5)); // Salida: o es una estructura est
 
 // Método SUBSTRING 
 // Funciona igual que el método slice, pero no admite parámetros negativos.
@@ -127,7 +127,7 @@ console.log(texto15.slice(3,-5)); // Salida: o es una estructura est
 // carácteres desde la posición indicada en el parámetro.
 
 let texto16 = 'Esto es una estructura estática';
-console.log(texto16.substr(3,10)); // Salida: o es una e
+console.log(texto16.substr(3, 10)); // Salida: o es una e
 console.log(texto16.substr(3)); // Salida: o es una estructura estática
 
 // Método SPLIT
@@ -140,7 +140,7 @@ console.log(texto16.substr(3)); // Salida: o es una estructura estática
 // de un texto.
 
 let texto17 = 'Esto es una estructura estática';
-console.log(texto17.split(" ")); // Salida: [ 'Esto', 'es', 'una', 'estructura', 'estática' ]
+console.log(texto17.split("")); // Salida: [ 'Esto', 'es', 'una', 'estructura', 'estática' ]
 console.log(texto17.split(" ", 3)); // Salida: [ 'Esto', 'es', 'una' ]
 
 // Método FROMCHARCODE
@@ -148,6 +148,4 @@ console.log(texto17.split(" ", 3)); // Salida: [ 'Esto', 'es', 'una' ]
 // y devolverá un string formado por los carácteres correspondientes
 // a dichos códigos.
 
-console.log(String.fromCharCode(65,66,67)); // Salida: ABC
-
-
+console.log(String.fromCharCode(65, 66, 67)); // Salida: ABC
