@@ -1,9 +1,16 @@
+
 let text = prompt("Escriba un texto:");
+do{
+
+    if(isNaN(Number(clave))){
+        alert("No has escrito un número");
+    }
+
+    let clave = prompt("Introduzca la clave:");
+}while(isNaN(Number(clave)))
 
 
-let clave = prompt("Introduzca la clave:");
 
-alert(clave);
 /*text.split("");*/
 let ascii = []; /* Creo arra para guardar en el los valores ascii*/
 for (let i = 0; i < text.length; i++) {
