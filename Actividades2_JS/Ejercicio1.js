@@ -3,12 +3,14 @@ let text = prompt("Escriba un texto:");
 
 let clave = prompt("Introduzca la clave:");
 
-text.split("");
-let ascii = [];
+alert(clave);
+/*text.split("");*/
+let ascii = []; /* Creo arra para guardar en el los valores ascii*/
 for (let i = 0; i < text.length; i++) {
 
-    ascii[i] = text.charCodeAt(i);
+    ascii[i] = text.charCodeAt(i); /* Guardo los numeros ascii en el array*/
 
-    alert(ascii[i]);
+    document.write("<p> " + "&#" + (ascii[i] + parseInt(clave)) + ";" + " </p>"); /*parseInt fuerzo a clave que sea un int*/
+    /*Imprimo los valores ascii con el metodo Cesar*/
 
 }
