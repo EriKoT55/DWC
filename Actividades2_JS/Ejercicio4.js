@@ -47,8 +47,6 @@ for(let i=1;i<=10000;i++){
 
 }
 
-
-
     document.write(`<li>Número 1: ${uno}</li>`);
     document.write(`<li>Número 2: ${dos}</li>`);
     document.write(`<li>Número 3: ${tres}</li>`);
@@ -59,6 +57,6 @@ for(let i=1;i<=10000;i++){
     document.write(`<li>Número 8: ${ocho}</li>`);
     document.write(`<li>Número 9: ${nueve}</li>`);
     document.write(`<li>Número 10: ${diez}</li>`);
-
+   
 
 
