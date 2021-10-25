@@ -6,7 +6,7 @@ for(let j=1;j<=50;j++){
 
     
     do{
-        randomizer.add(Math.floor(Math.random()*50+1));
+        randomizer.add(Math.floor(Math.random()*49+1));
     }while(randomizer.size<6);
 
     document.write("<br>");

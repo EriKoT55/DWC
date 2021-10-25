@@ -150,9 +150,3 @@ console.log(texto17.split(" ", 3)); // Salida: [ 'Esto', 'es', 'una' ]
 
 console.log(String.fromCharCode(65, 66, 67)); // Salida: ABC
 
-//Metodo CHARCODEAT
-// devuelve el numero ascii de cada caaracter del texto dado
-// debes indicar entre el parentesis los caracteres que tiene el texto
-var text=("manolote");
-
-console.log(text.charCodeAt(8));
