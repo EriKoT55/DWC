@@ -1,77 +1,63 @@
 //Arrays
-let arrayMayus=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","U","V","W","X","Y","Z"];
-let arrayMinus=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","u","v","w","x","y","z"];
-let arrayNums=["0","1","2","3","4","5","6","7","8","9"];
-
-//Arrays de Resultados
-let resultNumsIndexOf=[];
-let resultMayusIndexOf=[];
+const mayus="AÁÀBCÇDEÉÈFGHIÍÌJKLMNÑOÓÒPQRSTUÚÙÜVWXYZ";
+const minus="aáàbcçdeéèfghiíìjklmnñoóòpqrstuúùüvwxyz";
+const nums="0123456789";
+/*let simbols="0123456789aáàbcçdeéèfghiíìjklmnñoóòpqrstuúùüvwxyzAÁÀBCÇDEÉÈFGHIÍÌJKLMNÑOÓÒPQRSTUÚÙÜVWXYZ";*/
 
 //Booleanos condiciones
-let booleanMayus=false;
+/*let booleanMayus=false;
 let booleanMinus=false;
-let booleanNums=false;
+let booleanNums=false;*/
 
 //Booleanos bucle
-let booleanWhile=false;
+let nombreOk=true;
+let seguir=true;
 
-//Contador
-let contador=0;
+let nom,contraseña;
 
 
-let nom=prompt("Ponga su nombre de usuario: (Debe tener minusculas y numeros)");
-   
+do{
 
-    
- for(let i=0;i<nom.length;i++){ 
+    nom = prompt("Ponga su nombre de usuario");
 
-console.log(arrayMayus.indexOf(nom.charAt(i)));
+    if(nom==null){seguir=false;}
 
-        if(arrayMayus.indexOf(nom.charAt(i))!=-1){
+    if(seguir){
+        //Contadores
+        let contadorMayus=0;
+        let contadorSimbolos=0;
+        let contadorNums=0;
+        let i =0;
+        
+        while(i<nom.length){
+
+          if(minus.indexOf(nom.charAt(i))==-1){
+            if(mayus.indexOf(nom.charAt(i))!=-1){
+                contadorMayus++;
+                
+            }else if (nums.indexOf(nom.charAt(i))!=-1){
+                contadorNums++;
+                
+            }else {
+                contadorSimbolos++;
+                
+            }
             
-            alert(" HAY mayus");
-            nom=prompt("Ponga su nombre de usuario: (Debe tener minusculas y numeros)");
-
+          }  
+          i++
         }
 
-   
-   
+        if(contadorMayus>0 || contadorNums==0 || contadorSimbolos>0){
+
+            nombreOk=false; 
+            alert("Debe contener minusculas y numeros");
+            
+        }
+
+
     }
- 
 
 
+}while(seguir && !nombreOk);
 
 
-
- 
-
-
-
-/**/
-
-
-/*function encontrarMinus(booleanMinus){
-
-    for(let i=0;i<arrayChars.length;i++){
-   
-        //si hay alguna minus en arrayChars boolean true
-        if(arrayMinus.indexOf(arrayChars[i])!=-1){  
-            booleanMinus==true;
-        }
-    
-     }
-    return booleanMinus;
-}
-function encontrarMinus(booleanMinus){
-
-    for(let i=0;i<arrayChars.length;i++){
-   
-        //si hay alguna minus en arrayChars boolean true
-        if(arrayMinus.indexOf(arrayChars[i])!=-1){  
-            booleanMinus==true;
-        }
-    
-     }
-    return booleanMinus;
-}
-*/
