@@ -1,7 +1,7 @@
 //Arrays
-const mayus="AÁÀBCÇDEÉÈFGHIÍÌJKLMNÑOÓÒPQRSTUÚÙÜVWXYZ";
-const minus="aáàbcçdeéèfghiíìjklmnñoóòpqrstuúùüvwxyz";
-const nums="0123456789";
+var mayus="AÁÀBCÇDEÉÈFGHIÍÌJKLMNÑOÓÒPQRSTUÚÙÜVWXYZ";
+var minus="aáàbcçdeéèfghiíìjklmnñoóòpqrstuúùüvwxyz";
+var nums="0123456789";
 /*let simbols="0123456789aáàbcçdeéèfghiíìjklmnñoóòpqrstuúùüvwxyzAÁÀBCÇDEÉÈFGHIÍÌJKLMNÑOÓÒPQRSTUÚÙÜVWXYZ";*/
 
 //Booleanos condiciones

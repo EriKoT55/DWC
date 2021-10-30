@@ -11,7 +11,7 @@ let ocho=0;
 let nueve=0;
 let diez=0;
 
-const randoms = new Set([]);
+
 
 for(let i=1;i<=10000;i++){
 
