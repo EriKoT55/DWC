@@ -17,15 +17,10 @@ for(let j=1;j<=10000;j++){
 
     
 }
+
 //Perfilar para que quede bonito
 for(nums of randoms){
 
     document.write("<br>"+ nums);
-
 }
-
-
-// mostrar la suma de los numeros
-for(){
-
-}
+// no consegui sumar el map ni con "for of" ni un "for" normal.

@@ -28,7 +28,7 @@ do{
         let contadorSimbolos=0;
         let contadorNums=0;
         let i =0;
-        
+        nombreOk = true;
         while(i<nom.length){
 
           if(minus.indexOf(nom.charAt(i))==-1){
