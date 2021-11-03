@@ -8,7 +8,7 @@ function table(nfilas,ncolumnas,bcolor){
         for(let columna=0;columna<ncolumnas || columna < 4;columna++){
          
             document.write("<td style='border:1px solid "+bcolor+"'>");
-                document.write(contador);
+                document.write("&nbsp");
             document.write("</td>");
             contador++;
         }
@@ -19,4 +19,12 @@ function table(nfilas,ncolumnas,bcolor){
 }
 
 //Llamada a la funcion
-table(10,5,"green");
+table(10,4,"black");
+
+table(20,10,"black");
+
+for(let i=0;i<10;i++){
+
+    table(5,4,"green");
+
+}
