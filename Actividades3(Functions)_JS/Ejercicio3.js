@@ -1,22 +1,12 @@
 
 // me estoy haciendo un lio es mas sencillo
 function primo(num){
-    let array=[];
-    for(let i=1;i<=num;i++){
-        
-        if(num%i==0){
+    
+        if(/*No se que poner de condición pregutnar a belen*/){
 
-            array[i]=i;
+            
 
         }
-
-    }
-    
-    for(let j=0;j<num;j++){
-
-
-
-    }
 
 }
 
