@@ -1,25 +1,25 @@
 
-// me estoy haciendo un lio es mas sencillo
+
 function primo(num){
-    let array=[];
-    for(let i=1;i<=num;i++){
-        
-        if(num%i==0){
-
-            array[i]=i;
-
+   
+	for (let x = 2; x*x<=num; x++) {
+		if (num%x == 0){
+            return false;
         }
+	}
 
-    }
-    
-    for(let j=0;j<num;j++){
-
-
-
-    }
+    return true;
 
 }
 
-let num = prompt("Ponga el numero de primos que quiere que le salgan:");
+let primos=[];
+for(let i=0;i<1000;i++){
 
-document.write(primo(50));
+   if(primo(i)==true){
+        if(=undefined){//acabar
+        primos[i]=i;
+        }
+   }
+   document.write(primos[i]);
+}
+
