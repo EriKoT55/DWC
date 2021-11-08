@@ -7,7 +7,7 @@
 let palabra;
 let salir=false;
 const palabrasArray=[];
-const palabras= new Map();
+
 let i=0;
 do{
     
@@ -22,11 +22,25 @@ do{
  i++;  
 }while(salir==false);
 
-for(valor of palabrasArray){
-    document.write(valor);
+
+//No lo he probado mirar
+
+function repetirArrays(array){
+    const palabras= new Map();
+let contador=0;
+    for(let i=0;i<array.lenght;i++){
+
+        if(palabras.has(array[i])){
+            contador=2;
+            
+            palabrasArray.set(array[i],contador);
+            contador++;
+
+        }else{
+            contador=1;
+            palabrasArray.set(array[i],contador);
+        }
+
+    }
+return palabras;
 }
-
-
-/*function repetirArrays(array){
-
-}*/
