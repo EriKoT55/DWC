@@ -11,24 +11,12 @@ function primo(num){
 
 }
 
-let primos=[];
-for(let i=0;i<1000;i++){
 
-// me estoy haciendo un lio es mas sencillo
-function primo(num){
-    
-        if(/*No se que poner de condición pregutnar a belen*/){
+for(let i=1;i<=1000;i+=2){
 
-            
-
-        }
-
-
-   if(primo(i)==true){
-        if(=undefined){//acabar
-        primos[i]=i;
-        }
+   if(primo(i)){
+    document.write("<br> "+i);
    }
-   document.write(primos[i]);
+  
 }
 
