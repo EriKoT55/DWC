@@ -22,25 +22,30 @@ do{
  i++;  
 }while(salir==false);
 
+//No lo he probado, mirar
 
-//No lo he probado mirar
 
 function repetirArrays(array){
-    const palabras= new Map();
-let contador=0;
-    for(let i=0;i<array.lenght;i++){
-
+    const palabras = new Map();
+    
+    for(let i=0;i<array.length;i++){
+       
         if(palabras.has(array[i])){
-            contador=2;
             
-            palabrasArray.set(array[i],contador);
-            contador++;
-
+            palabras.set(array[i],(palabras.get(array[i])+1));
+          
         }else{
-            contador=1;
-            palabrasArray.set(array[i],contador);
+            palabras.set(array[i],1);
         }
-
+                
     }
-return palabras;
+
+    return palabras;
+
+}
+
+mapa=repetirArrays(palabrasArray);
+
+for(let [clave,valor] of mapa){
+    document.write("<br> La palabra "+clave+" se a repetido: "+valor);
 }
