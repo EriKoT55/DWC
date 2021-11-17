@@ -1,8 +1,8 @@
-import { Punto } from "Punto";
+import { Punto } from "./Punto.js";
 
 var p = new Punto(1,2); 
 console.log("p: " + p.toString()) // Salida: (1,2)
-var q = new Punto(6,-3);
+/*var q = new Punto(6,-3);
 console.log("q: " + q.toString()); //Salida: (6,-3)
 
 p.cambiar(-5,2);
@@ -17,4 +17,4 @@ console.log("r: " + r.toString()); // Salida: (9,2)
 var s = p.suma(r);
 console.log("s: " + s.toString()); // Salida: (4,4)
 
-console.log("Distancia entre p y q: " + p.obetenerDistancia(q)); // Salida: 12.08
+console.log("Distancia entre p y q: " + p.obetenerDistancia(q)); // Salida: 12.08*/
