@@ -1,31 +1,30 @@
 /* HACER CON FUNCIONES CONTRUCTORAS */
-class Punto{
+function Punto(coordX,coordY){
 
-    constructor(coordX,coordY){
         this.X=coordX;
         this.Y=coordY;
-    }
+    
 //Como un setter(Metodo)
-    cambiar(x,y){
+    this.cambiar=function(x,y){
         this.X=x;
         this.Y=y;
     }
 
 //Muestra los valores del objeto
-    toString(){
+    this.toString=function(){
         return "("+this.X+","+this.Y+")";
     }
 
 //Como un getter(Metodo)
-    copia(){
+    this.copia=function(){
         return new Punto(this.X,this.Y);
     }
 //Funcion como tal, utilizar formula que nos dio
-    suma(np){
+    this.suma=function(np){
         return  "("+(this.X+np.X)+","+(this.Y+np.Y)+")";
     }
 
-    obetenerDistancia(np){
+    this.obetenerDistancia=function(np){
         
       let resX=((this.X)-(np.X));
       let resY=((this.Y)-(np.Y));
@@ -36,6 +35,7 @@ class Punto{
     }
 
 }
+
 export {Punto};
 
 
