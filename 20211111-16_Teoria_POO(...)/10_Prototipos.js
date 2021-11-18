@@ -75,6 +75,8 @@ console.log(b.sumaXY()); // Salida: 3
 console.log(a.z); // Salida: 0
 console.log(b.z); // Salida: 0
 
+/********************************HERENCIA CON PROTOTYPE*********************** */
+
 // Ejemplo de modificación de propiedad heredada
 function Punto(coordX, coordY) {
     this.x = coordX;

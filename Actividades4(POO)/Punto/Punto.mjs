@@ -1,4 +1,4 @@
-
+/* HACER CON FUNCIONES CONTRUCTORAS */
 class Punto{
 
     constructor(coordX,coordY){
@@ -23,10 +23,6 @@ class Punto{
 //Funcion como tal, utilizar formula que nos dio
     suma(np){
         return  "("+(this.X+np.X)+","+(this.Y+np.Y)+")";
-    }
-
-    x(){
-        this.X=x;
     }
 
     obetenerDistancia(np){

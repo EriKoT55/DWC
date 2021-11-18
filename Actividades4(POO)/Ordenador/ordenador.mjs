@@ -1,4 +1,4 @@
-
+/* HACER CON FUNCIONES CONTRUCTORAS */
 class Ordenador{
 
     constructor(marca,modelo,ram=4,disco=512,pulgadas=17){
@@ -19,7 +19,9 @@ class Ordenador{
 
 }
 
-class Portatil extends Ordenador{
+Ordenador.prototype;
+
+/*class Portatil extends Ordenador{
 
     constructor(marca,modelo,ram=4,disco=256,pulgadas=13,autonomia=4){
         super(marca,modelo,ram,disco,pulgadas);
@@ -35,6 +37,6 @@ class Portatil extends Ordenador{
 
     }
 
-}
+}*/
 
 export {Ordenador, Portatil};
