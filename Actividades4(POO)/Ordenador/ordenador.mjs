@@ -1,4 +1,5 @@
 /* HACER CON FUNCIONES CONTRUCTORAS */
+//HERENCIA CON FUNCIONES, Prototype y __proto__(este ultimo esta obsoleto)
 function Ordenador(marca,modelo,ram=4,disco=512,pulgadas=17){
 
         this.marca=marca;
@@ -18,7 +19,22 @@ Ordenador.prototype.toString = function(){
 }
 
 
+function Portatil (marca,modelo,ram=4,disco=256,pulgadas=13,autonomia=4){
+    //puedes utilizar call en vez de prototype
 
+    this.__proto__=new Ordenador(marca,modelo,ram,disco,pulgadas);
+
+    this.autonomia=autonomia;
+
+    this.toString=function(){
+
+        return this.__proto__.toString+"\n Autonomia: "+this.autonomia+"horas";
+
+    }
+
+}
+
+//HERENCIA CON CLASES
 /*class Ordenador{
 
     constructor(marca,modelo,ram=4,disco=512,pulgadas=17){
