@@ -10,16 +10,19 @@ class Edificio{
         this.mapaPropietariosEdificio=mapaPropietariosEdificio;
     }
 
+    //Esto sera introducido dentro del Map siendo este la CLAVE
     agregarPlanta(numeroPlanta){
 
-        
+
 
     }
+    //Esto sera un VALOR que ira dentro de la CLAVE
     agregarPropietario(nombrePropietario,numeroPlanta, numeroPuerta){
 
 
 
     }
+    //Esto sera un VALOR que ira dentro de la CLAVE
     agregarPuerta(numeroPlanta,numeroPuerta){
 
     }
