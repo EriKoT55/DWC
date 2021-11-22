@@ -2,31 +2,42 @@ class Edificio{
 
     constructor(tipoVia,nombreVia,numeroEdificio,codigoPostal){
 
+        const mapaPropietariosEdificio = new Map();
+
         this.tipoVia=tipoVia;
         this.nombreVia=nombreVia;
         this.numeroEdificio=numeroEdificio;
         this.codigoPostal=codigoPostal;
-        //Esto es un Map
+        //Es un Map
         this.mapaPropietariosEdificio=mapaPropietariosEdificio;
     }
 
     //Esto sera introducido dentro del Map siendo este la CLAVE
     agregarPlanta(numeroPlanta){
-
-
-
+      let planta=new Map();
+      this.mapaPropietariosEdificio.set(numeroPlanta,planta);
     }
-    //Esto sera un VALOR que ira dentro de la CLAVE
-    agregarPropietario(nombrePropietario,numeroPlanta, numeroPuerta){
 
-
-
-    }
-    //Esto sera un VALOR que ira dentro de la CLAVE
+    //Esto sera un  mapa
     agregarPuerta(numeroPlanta,numeroPuerta){
 
+        let puerta=[];
+        let planta= this.mapaPropietariosEdificio.get(numeroPlanta);
+
+        planta.set(numeroPuerta,puerta);
+
     }
-    imprimirCodigoPoatal(){
+    //Esto sera un array
+    /*Mirar darle otra vuelta */
+    agregarPropietario(nombrePropietario,numeroPlanta, numeroPuerta){
+
+        let planta= this.mapaPropietariosEdificio.get(numeroPlanta);
+        let puerta = this.mapaPropietariosEdificio.get(numeroPuerta);
+
+        puerta.push(nombrePropietario);
+    }
+
+    imprimirCodigoPostal(){
         return "Codigo Postal: "+this.codigoPostal;
     }
     imprimirNombreVia(){
@@ -55,3 +66,5 @@ class Edificio{
         this.tipoVia=nuevoTipoVia;
     }
 }   
+
+export {Edificio};
