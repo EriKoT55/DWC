@@ -26,7 +26,7 @@ let edificio1 = `{
 let Edificio1=JSON.parse(edificio1);
 
 //Ejemplo que utilización del objeto para obtener sus datos
-console.log(Edificio1.mapaPropietariosEdificio.A["1A"]);
+//console.log(Edificio1.mapaPropietariosEdificio.A["1A"]);
 
 /*
 -Utilitzar l’arxiu amb l’objecte JSON amb informació del edifici1 per:
@@ -34,5 +34,28 @@ console.log(Edificio1.mapaPropietariosEdificio.A["1A"]);
 -Utilitzar els métodes de l’objecte Edifici per mostrar pel navegador les següents dades.
 */
 //Creo un nuevo Edificio 
-let ObjEdificio = new Edificio(ObjEdificio.tipoVia,ObjEdificio.numeroEdificio,ObjEdificio.numeroEdificio,
-    ObjEdificio.odigoPostal,ObjEdificio.);
+
+function colorRandomFondo(){
+
+    let red;
+    let green;
+    let blue;
+/* https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_style_backgroundcolor */
+        red= Math.floor(Math.random()*255);
+        green= Math.floor(Math.random()*255);
+        blue= Math.floor(Math.random()*255);
+    
+    document.body.style.backgroundColor="rgb(red,green,blue)";
+
+}
+
+colorRandomFondo();
+
+let ObjEdificio = new Edificio(Edificio1.tipoVia,Edificio1.nombreVia,Edificio1.numeroEdificio,
+    Edificio1.codigoPostal);
+    let map = new Map();
+
+    //let map1 = mapaPropietariosEdificio;
+
+    
+console.log(ObjEdificio);

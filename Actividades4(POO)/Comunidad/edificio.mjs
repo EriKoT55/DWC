@@ -51,17 +51,44 @@ class Edificio{
     imprimirTipoVia(){
         return "Tipo de via: "+ this.tipoVia;
     }
-    //Bucle el cual me de todos los propietarios
-    //Bastante complejo 3bucles, pero utilizando propiedades que no he visto como 
+    //Bucle que me de todos los propietarios
+    // Tres bucles, pero utilizando propiedades que no he visto como 
     //.next / .value / .keys
+
     imprimirTodosPropietarios(){
+        //Guardo las claves en la variable
+         let plantaClave=this.mapaPropietariosEdificio.keys();
+        let text="";
+
+        for(let i=0;i<this.mapaPropietariosEdificio.size;i++){
+    //cojo la clave con .next().value 
+    let planta=plantaClave.next().value;
+
+    // Me muestra lo que contiene esta clave
+        text+="Planta: "+planta+"\n";
+        
+         //Guardo las claves en la variable
+            let puertaClave=this.mapaPropietariosEdificio.get(planta).keys();
+    
+            for(let j=0;j<this.mapaPropietariosEdificio.get(planta).size;j++){
+                //cojo la clave con .next().value 
+                    let puerta=puertaClave.next().value;
+
+                // Me muestra lo que contiene esta clave
+                text+="     Puerta: "+puerta+" \n";
+                
+               
+                for(let k=0;k<this.mapaPropietariosEdificio.get(planta).get(puerta).length;k++){
+                    //Guardo los valores 
+                    let propietario=this.mapaPropietariosEdificio.get(planta).get(puerta);
+                    text+= "        "+propietario[k]+"\n";
+
+                }
+
+            }
+        }
        
-
-       for(let i=0;i<puerta.length;i++){
-           
-       }
-
-
+        return text;
     }
     modificarCodigoPostal(nuevoCodigoPostal){
         this.codigoPostal=nuevoCodigoPostal;
