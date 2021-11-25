@@ -40,12 +40,12 @@ function colorRandomFondo(){
     let red;
     let green;
     let blue;
-/* https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_style_backgroundcolor */
+
         red= Math.floor(Math.random()*255);
         green= Math.floor(Math.random()*255);
         blue= Math.floor(Math.random()*255);
     
-    document.body.style.backgroundColor="rgb(red,green,blue)";
+    document.body.style.backgroundColor=`rgb(${red},${green},${blue})`;
 
 }
 
@@ -57,5 +57,6 @@ let ObjEdificio = new Edificio(Edificio1.tipoVia,Edificio1.nombreVia,Edificio1.n
 
     //let map1 = mapaPropietariosEdificio;
 
-    
-console.log(ObjEdificio);
+    //No es posible escribir 
+document.write("<h1>Comunitat de propietaris</h1>");    
+document.write(ObjEdificio);
