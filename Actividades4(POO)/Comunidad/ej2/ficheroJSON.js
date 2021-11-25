@@ -1,4 +1,3 @@
-import {Edificio} from "./edificio.mjs";
 
 let edificio1 = `{
     "tipoVia":"Calle",
@@ -49,14 +48,3 @@ function colorRandomFondo(){
 
 }
 
-colorRandomFondo();
-
-let ObjEdificio = new Edificio(Edificio1.tipoVia,Edificio1.nombreVia,Edificio1.numeroEdificio,
-    Edificio1.codigoPostal);
-    let map = new Map();
-
-    //let map1 = mapaPropietariosEdificio;
-
-    //No es posible escribir 
-document.write("<h1>Comunitat de propietaris</h1>");    
-document.write(ObjEdificio);

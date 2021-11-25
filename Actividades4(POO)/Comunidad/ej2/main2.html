@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edificio</title>
+    <style>
+
+        h1,h3{
+            text-align: center;
+            margin:0 auto;
+        }
+
+    </style>
+    <script type="text/javascript" src="edificio.js"></script>
+    <script type="text/javascript" src="ficheroJSON.js"></script>
+</head>
+<body>
+    <h1>Comunitat de propietaris</h1>
+    <script>
+    colorRandomFondo();
+
+    let ObjEdificio = new Edificio(Edificio1.tipoVia,Edificio1.nombreVia,Edificio1.numeroEdificio,
+    Edificio1.codigoPostal);
+ 
+    
+    document.write(`<h3>[${Edificio1.tipoVia}&nbsp;&nbsp;${Edificio1.nombreVia}&nbsp;
+        ${Edificio1.numeroEdificio}&nbsp;&nbsp;${Edificio1.codigoPostal}]</h3>`);    
+    
+    //Mirar las pijadas css en Lliurament
+
+        let arrayObj = Object.entries(Edificio1.mapaPropietariosEdificio);
+        let arrayObj2;
+        let arrayObj3;
+    for(let e=0;e<arrayObj.length;e++){
+        
+        ObjEdificio.agregarPlanta(arrayObj[e][0]);
+        arrayObj2=Object.entries(arrayObj[e][1]);
+        
+        for(let r=0;r<arrayObj2.length;r++){
+            
+            ObjEdificio.agregarPuerta(arrayObj[e][0],arrayObj2[r][0]);
+            arrayObj3=arrayObj2[r][1];
+            
+            for(let k=0;k<arrayObj3.length;k++){
+                ObjEdificio.agregarPropietario(arrayObj3[k],arrayObj[e][0],arrayObj2[r][0]);
+            
+            }
+
+        }
+    }
+    document.write(ObjEdificio.imprimirTodosPropietarios());
+    </script>
+</body>
+</html>
