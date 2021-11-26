@@ -47,7 +47,7 @@
         
         for(let r=0;r<arrayObj2.length;r++){
             
-            ObjEdificio.agregarPuerta(arrayObj[e][0],arrayObj2[r][0]);
+            ObjEdificio.agregarPuerta(arrayObj[e][0],arrayObj2[r][0],);
             arrayObj3=arrayObj2[r][1];
             
             for(let k=0;k<arrayObj3.length;k++){
@@ -59,9 +59,7 @@
     
     //Con replace() puedes ir modificando cada condicion del patron de aqui abajo,
     // y asi poderlo en HTML sin modificar imprimirTodosPropietarios
-    let res=ObjEdificio.imprimirTodosPropietarios().replace();
-
-    res;
+    document.write(ObjEdificio.imprimirTodosPropietarios());
     
     </script>
 </body>
