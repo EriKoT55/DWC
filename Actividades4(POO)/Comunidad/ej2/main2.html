@@ -33,11 +33,13 @@
     document.write(`<h1>[${Edificio1.tipoVia}&nbsp;&nbsp;${Edificio1.nombreVia},&nbsp;
         ${Edificio1.numeroEdificio}&nbsp;&nbsp;C.P ${Edificio1.codigoPostal}]</h1>`);    
     
-   
 
+        //Utilizo la funcion que dijiste para pasar el objeto a un array para trabajar
+        //más facilmente con el, y lo guardo en una variable
         let arrayObj = Object.entries(Edificio1.mapaPropietariosEdificio);
         let arrayObj2;
         let arrayObj3;
+
     for(let e=0;e<arrayObj.length;e++){
         
         ObjEdificio.agregarPlanta(arrayObj[e][0]);
@@ -52,10 +54,15 @@
                 ObjEdificio.agregarPropietario(arrayObj3[k],arrayObj[e][0],arrayObj2[r][0]);
             
             }
-
         }
     }
-    document.write(ObjEdificio.imprimirTodosPropietarios());
+    
+    //Con replace() puedes ir modificando cada condicion del patron de aqui abajo,
+    // y asi poderlo en HTML sin modificar imprimirTodosPropietarios
+    let res=ObjEdificio.imprimirTodosPropietarios().replace();
+
+    res;
+    
     </script>
 </body>
 </html>

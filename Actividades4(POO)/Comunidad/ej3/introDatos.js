@@ -3,7 +3,7 @@ function introDatos(){
         let tipoVia;
         let nombreVia;
         let numeroEdificio;
-        let codigoPoatal;
+        let codigoPostal;
         let planta;
         let puerta;
         let propietario;
@@ -23,8 +23,8 @@ function introDatos(){
             if(numeroEdificio!=null){
                 alert("Dato introducido");
             }
-            codigoPoatal = prompt("Introduzca el codigo postal: ");
-            if(codigoPoatal!=null){
+            codigoPostal = prompt("Introduzca el codigo postal: ");
+            if(codigoPostal!=null){
                 alert("Dato introducido");
             }
             planta = prompt("Introduzca numero de la planta: ");
@@ -48,10 +48,6 @@ function introDatos(){
             propietario = prompt("Introduzca el nombre del propietario: ");
             if(propietario!=null){
                 alert("Dato introducido");
-            }
-
-
-            let edificio = new Edificio(tipoVia,nombreVia,numeroEdificio,codigoPoatal);
-
-
+            }        
+            
 }
