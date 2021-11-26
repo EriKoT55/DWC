@@ -15,6 +15,7 @@
             margin:0 auto;
             
         }
+      
         h2,h3{
             font-weight: bold;
         }
@@ -86,9 +87,12 @@
                 continuar=false;
             }
 
-            //Me repite el bucle si quiero seguir introduciendo datos
+            //Me repite el bucle si acepto seguir introduciendo datos
             continuar = confirm("Quieres seguir introduciendo datos");
 
+
+            //Si encuentra el calor me devuelve true si no false
+            //es para que no me sobrescriba los datos
             if(edificio.mapaPropietariosEdificio.has(planta)==false){
                 edificio.agregarPlanta(planta);
             }
@@ -100,8 +104,8 @@
 
         } while (continuar == true);
         document.write("<h1>Comunidad<h1>");
-        document.write(`<h3>[${edificio.tipoVia}&nbsp;&nbsp;${edificio.nombreVia},&nbsp;
-                ${edificio.numeroEdificio}&nbsp;&nbsp;C.P ${edificio.codigoPostal}]</h3>`);
+        document.write(`<h1>[${edificio.tipoVia}&nbsp;&nbsp;${edificio.nombreVia},&nbsp;
+                ${edificio.numeroEdificio}&nbsp;&nbsp;C.P ${edificio.codigoPostal}]</h1>`);
 
         document.write(edificio.imprimirTodosPropietarios());
        
