@@ -6,12 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edificio</title>
     <style>
-
-        h1,h3{
+        body{
+            margin-left:4px;
+        }
+        h1{
             text-align: center;
             margin:0 auto;
+            
         }
-
+        h2,h3{
+            font-weight: bold;
+        }
     </style>
     <script type="text/javascript" src="edificio.js"></script>
     <script type="text/javascript" src="ficheroJSON.js"></script>
@@ -25,10 +30,10 @@
     Edificio1.codigoPostal);
  
     
-    document.write(`<h3>[${Edificio1.tipoVia}&nbsp;&nbsp;${Edificio1.nombreVia}&nbsp;
-        ${Edificio1.numeroEdificio}&nbsp;&nbsp;${Edificio1.codigoPostal}]</h3>`);    
+    document.write(`<h1>[${Edificio1.tipoVia}&nbsp;&nbsp;${Edificio1.nombreVia},&nbsp;
+        ${Edificio1.numeroEdificio}&nbsp;&nbsp;C.P ${Edificio1.codigoPostal}]</h1>`);    
     
-    //Mirar las pijadas css en Lliurament
+   
 
         let arrayObj = Object.entries(Edificio1.mapaPropietariosEdificio);
         let arrayObj2;
