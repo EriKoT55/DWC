@@ -59,13 +59,13 @@ class Edificio{
         //Guardo las claves en la variable
          let plantaClave=this.mapaPropietariosEdificio.keys();
         let text="";
-        //let tab="&nbsp;&nbsp;&nbsp;&nbsp";
+        let tab="&nbsp;&nbsp;&nbsp;&nbsp";
         for(let i=0;i<this.mapaPropietariosEdificio.size;i++){
             //cojo la clave con .next().value 
             let planta=plantaClave.next().value;
 
             // Me muestra lo que contiene esta clave
-            text+="Planta: "+planta+"\n";
+            text+="<h2>Planta: "+planta+"</h2>";
         
             //Guardo las claves en la variable
             let puertaClave=this.mapaPropietariosEdificio.get(planta).keys();
@@ -75,12 +75,12 @@ class Edificio{
                     let puerta=puertaClave.next().value;
 
                 // Me muestra lo que contiene esta clave
-                text+="     Puerta: "+puerta+" \n";
+                text+="<h3>"+tab+"Puerta: "+puerta+"</h3>";
                 
                 for(let k=0;k<this.mapaPropietariosEdificio.get(planta).get(puerta).length;k++){
                     //Guardo los valores 
                     let propietario=this.mapaPropietariosEdificio.get(planta).get(puerta);
-                    text+="        "+propietario[k]+"\n";
+                    text+=tab+tab+propietario[k]+"<br> ";
 
                 }
 

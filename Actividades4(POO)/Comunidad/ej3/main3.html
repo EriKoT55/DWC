@@ -6,6 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edificio</title>
+    <style>
+        body{
+            margin-left:4px;
+        }
+        h1{
+            text-align: center;
+            margin:0 auto;
+            
+        }
+      
+        h2,h3{
+            font-weight: bold;
+        }
+    </style>
     <script type="text/javascript" src="edificio.js"></script>
     <script type="text/javascript" src="ficheroJSON.js"></script>
     <script type="text/javascript" src="introDatos.js"></script>
@@ -49,6 +63,8 @@
             planta = prompt("Introduzca numero de la planta: ");
             if (planta != null) {
                 alert("Dato introducido");
+            }else{
+                continuar=false;
             }
 
             do {
@@ -67,23 +83,31 @@
             propietario = prompt("Introduzca el nombre del propietario: ");
             if (propietario != null) {
                 alert("Dato introducido");
+            }else{
+                continuar=false;
             }
 
-            //Me repite el bucle si quiero seguir introduciendo datos
+            //Me repite el bucle si acepto seguir introduciendo datos
             continuar = confirm("Quieres seguir introduciendo datos");
 
-            edificio.agregarPlanta(planta);
-            edificio.agregarPuerta(planta, puerta);
+
+            //Si encuentra el calor me devuelve true si no false
+            //es para que no me sobrescriba los datos
+            if(edificio.mapaPropietariosEdificio.has(planta)==false){
+                edificio.agregarPlanta(planta);
+            }
+            if(edificio.mapaPropietariosEdificio.get(planta).has(puerta)==false){
+                edificio.agregarPuerta(planta, puerta);
+            }
+            
             edificio.agregarPropietario(propietario, planta, puerta);
 
         } while (continuar == true);
-
+        document.write("<h1>Comunidad<h1>");
         document.write(`<h1>[${edificio.tipoVia}&nbsp;&nbsp;${edificio.nombreVia},&nbsp;
                 ${edificio.numeroEdificio}&nbsp;&nbsp;C.P ${edificio.codigoPostal}]</h1>`);
-/*https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/replace*/
-        let res =edificio.imprimirTodosPropietarios().replace();
 
-        res.replace();
+        document.write(edificio.imprimirTodosPropietarios());
        
     </script>
 </body>

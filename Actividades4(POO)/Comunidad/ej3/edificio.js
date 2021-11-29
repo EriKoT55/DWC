@@ -56,38 +56,38 @@ class Edificio{
     //.next / .value / .keys
 
     imprimirTodosPropietarios(){
-       //Guardo las claves en la variable
-         let plantaClave=this.mapaPropietariosEdificio.keys();
-        let text="";
-        //let tab="&nbsp;&nbsp;&nbsp;&nbsp";
-        for(let i=0;i<this.mapaPropietariosEdificio.size;i++){
-            //cojo la clave con .next().value 
-            let planta=plantaClave.next().value;
+      //Guardo las claves en la variable
+      let plantaClave=this.mapaPropietariosEdificio.keys();
+      let text="";
+      let tab="&nbsp;&nbsp;&nbsp;&nbsp";
+      for(let i=0;i<this.mapaPropietariosEdificio.size;i++){
+          //cojo la clave con .next().value 
+          let planta=plantaClave.next().value;
 
-            // Me muestra lo que contiene esta clave
-            text+="Planta: "+planta+"\n";
-        
-            //Guardo las claves en la variable
-            let puertaClave=this.mapaPropietariosEdificio.get(planta).keys();
-    
-            for(let j=0;j<this.mapaPropietariosEdificio.get(planta).size;j++){
-                //cojo la clave con .next().value 
-                    let puerta=puertaClave.next().value;
+          // Me muestra lo que contiene esta clave
+          text+="<h2>Planta: "+planta+"</h2>";
+      
+          //Guardo las claves en la variable
+          let puertaClave=this.mapaPropietariosEdificio.get(planta).keys();
+  
+          for(let j=0;j<this.mapaPropietariosEdificio.get(planta).size;j++){
+              //cojo la clave con .next().value 
+                  let puerta=puertaClave.next().value;
 
-                // Me muestra lo que contiene esta clave
-                text+="     Puerta: "+puerta+" \n";
-                
-                for(let k=0;k<this.mapaPropietariosEdificio.get(planta).get(puerta).length;k++){
-                    //Guardo los valores 
-                    let propietario=this.mapaPropietariosEdificio.get(planta).get(puerta);
-                    text+="        "+propietario[k]+"\n";
+              // Me muestra lo que contiene esta clave
+              text+="<h3>"+tab+"Puerta: "+puerta+"</h3>";
+              
+              for(let k=0;k<this.mapaPropietariosEdificio.get(planta).get(puerta).length;k++){
+                  //Guardo los valores 
+                  let propietario=this.mapaPropietariosEdificio.get(planta).get(puerta);
+                  text+=tab+tab+propietario[k]+"<br> ";
 
-                }
+              }
 
-            }
-        }
-       
-        return text;
+          }
+      }
+     
+      return text;
     }
     modificarCodigoPostal(nuevoCodigoPostal){
         this.codigoPostal=nuevoCodigoPostal;
