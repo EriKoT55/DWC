@@ -1,13 +1,15 @@
 let url;
 let seguir=true;
 /* https://www.w3schools.com/js/js_regexp.asp */
-url= prompt("Introduzca una URL para comprabarla: ");
+url= prompt("Introduzca una URL para comprobarla: ");
 
 function comprobationUrl(url){
 
-    return /^(http|https|ftp)::/+/["/"]{0,3}//*Shema*/
-    /[A-ZÁÉÍÓÚÜÇa-záéíóúüç0-9]//*nom,me falta que pueda tener un guion y poner para que este o no, y que esten separadas on puntos*/
-    /:/;
+    return /^(http|https|ftp)?::/+/["/"]{0,3}//*Shema*/
+    /[-A-ZÁÉÍÓÚÜÇa-záéíóúüç0-9]?//*que esten separadas un puntos*/
+    /::[-A-ZÁÉÍÓÚÜÇa-záéíóúüç0-9]?/
+    /@/
+    /:[0-90-9]/;
 
 }
 
