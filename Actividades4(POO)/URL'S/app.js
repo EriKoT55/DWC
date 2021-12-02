@@ -4,13 +4,13 @@
 let url= prompt("Introduzca una URL para comprobarla: ");
 
 function comprobationUrl(url){
+                                                                                                                                        //Mirar esta parte al poner * + ? fuera del parentesis peta y creo que cualquier cosa que pongas dara true
+    let comprobacion =/^(http|https|ftp)?:\/{0,3}([A-ZÇa-zç0-9\-\.]*:.+|[A-ZÇa-zç0-9\-\.]*)\@[A-ZÇa-zç0-9\-]+\.[A-ZÇa-zç0-9\-]+(:[0-9])*(^\/.+\/$)*.+\?$/;
+    //http:/P3p2-na.N0:Give|*100%@_-!@
+    //http:/P3p2-na.N0:Give|*100%@_-!@MAn3L0.com:80/Give|*100%@_-!@/
+    //http:/P3p2-na.N0:Give|*100%@_-!@MAn3L0.com:80/Give|*100%@_-!@/2sE%#3?
 
-    let comprobacion =/^(http|https|ftp)?::["/"]{0,3}([A-ZÇa-zç0-9\-\.]*:.+|[A-ZÇa-zç0-9\-\.]*)/;
-    //http::/P3p2-na.N0:Give|*100%@_-!@ por separado funciona pero los junto y peta esto ([\W]|[\w])\@$ y lo otro
-   // /(/\@)?[A-ZÁÉÍÓÚÜÇa-záéíóúüç]["."][A-ZÁÉÍÓÚÜÇa-záéíóúüç]//*host*/
-   // /(/\:?\:?[0-90-9]?)^["/"]?[A-ZÁÉÍÓÚÜÇa-záéíóúüç]["/"]?[A-ZÁÉÍÓÚÜÇa-záéíóúüç]["/"]?//*Path*/
-   // /(/\?)([\W][\w])/;//esto es para el final del ej
-
+   // en el host me falta hacer que el minimo sean dos palabras separadas por un punto
   
         if(comprobacion.test(url)==true){
             return "t";

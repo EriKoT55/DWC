@@ -173,3 +173,48 @@ console.log(expresion14.test(cp2)); // Salida: false
     Estas opciones se pueden encontrar en:
         https://www.w3schools.com/js/js_regexp.asp
 */
+
+//El método JOIN()
+// une todos los elementos de una matriz (o un objeto similar a una matriz) 
+//en una cadena y devuelve esta cadena.
+const elements = ['Fire', 'Air', 'Water'];
+
+console.log(elements.join());
+// expected output: "Fire,Air,Water"
+
+console.log(elements.join(''));
+// expected output: "FireAirWater"
+
+console.log(elements.join('-'));
+// expected output: "Fire-Air-Water"
+
+// El metodo INCLUDES()
+//determina si una matriz incluye un determinado elemento, devuelve true o false según corresponda.
+const array1 = [1, 2, 3];
+
+console.log(array1.includes(2));
+// expected output: true
+
+const pets = ['cat', 'dog', 'bat']; 
+
+console.log(pets.includes('cat'));
+// expected output: true
+
+console.log(pets.includes('at'));
+// expected output: false
+
+//El método REPLACE() 
+//devuelve una nueva cadena con algunas o todas las coincidencias de un patrón, 
+//siendo cada una de estas coincidencias reemplazadas por remplazo. 
+//El patrón puede ser una cadena o una RegExp,
+// y el reemplazo puede ser una cadena o una función que será llamada para cada coincidencia.
+// Si el patrón es una cadena, sólo la primera coincidencia será reemplazada.
+
+const p = 'The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?';
+
+console.log(p.replace('dog', 'monkey'));
+// expected output: "The quick brown fox jumps over the lazy monkey. If the dog reacted, was it really lazy?"
+
+const regex = /Dog/i;
+console.log(p.replace(regex, 'ferret'));
+// expected output: "The quick brown fox jumps over the lazy ferret. If the dog reacted, was it really lazy?"

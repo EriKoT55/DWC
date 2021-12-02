@@ -140,7 +140,8 @@ console.log(texto16.substr(3)); // Salida: o es una estructura estática
 // de un texto.
 
 let texto17 = 'Esto es una estructura estática';
-console.log(texto17.split("")); // Salida: [ 'Esto', 'es', 'una', 'estructura', 'estática' ]
+console.log(texto17.split("")); // Salida: ['E', 's', 't', 'o', ' ', 'e','s', ' ', 'u', 'n', 'a', ' ',
+//'e', 's', 't', 'r', 'u', 'c', 't', 'u', 'r', 'a', ' ', 'e', 's', 't', 'á', 't', 'i', 'c','a']
 console.log(texto17.split(" ", 3)); // Salida: [ 'Esto', 'es', 'una' ]
 
 // Método FROMCHARCODE
@@ -150,3 +151,17 @@ console.log(texto17.split(" ", 3)); // Salida: [ 'Esto', 'es', 'una' ]
 
 console.log(String.fromCharCode(65, 66, 67)); // Salida: ABC
 
+//El método SPLICE()
+//cambia el contenido de un array eliminando elementos existentes y/o 
+//agregando nuevos elementos.
+
+const months = ['Jan', 'March', 'April', 'June'];
+months.splice(1, 0, 'Feb');
+// inserts at index 1
+console.log(months);
+// expected output: Array ["Jan", "Feb", "March", "April", "June"]
+
+months.splice(4, 1, 'May');
+// replaces 1 element at index 4
+console.log(months);
+// expected output: Array ["Jan", "Feb", "March", "April", "May"]
