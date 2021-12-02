@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edificio</title>
+    <style>
+
+        h1,h2{
+            text-align: center;
+        }
+
+    </style>
+    <script type="text/javascript" src="json.js"></script>
+    <script type="text/javascript" src="edificio.js"></script>
+</head>
+<body>
+    <h1>COMUNITAT DE PROPIETARIOS</h1>
+    <script>
+        RandomColorFondo();
+
+        let edificio = new Edificio(Edificio1.tipoVia,Edificio1.nombreVia,Edificio1.numeroEdificio,Edificio1.codigoPostal);
+        
+        document.write("<h2>["+edificio.tipoVia+" "+edificio.nombreVia+", "+edificio.numeroEdificio+" C.P "+edificio.codigoPostal+"]<h2>")
+
+    </script>
+</body>
+</html>

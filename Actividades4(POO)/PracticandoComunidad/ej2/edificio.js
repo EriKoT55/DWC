@@ -24,7 +24,7 @@ class Edificio{
 
      }
      agregarPropietario(nombrePropietario,numeroPlanta,numeroPuerta){
-        //acabar
+        
 
         let planta = this.mapaPropietariosEdificio.get(numeroPlanta);
         let puerta= planta.get(numeroPuerta);
@@ -34,21 +34,40 @@ class Edificio{
      }
 
      imprimirCodigoPostal(){
-         return "Codigo Postal:"+this.codigoPostal;
+         return "Codigo Postal: "+this.codigoPostal;
      }
      imprimirNombreVia(){
-         return "Nombre de la via:"+this.nombreVia;
+         return "Nombre de la via: "+this.nombreVia;
      }
      imprimirNumeroEdificio(){
          return "Numero del edificio: "+this.numeroEdificio
      }
      imprimirTipoVia(){
-         return "Tipo de via"+this.tipoVia;
+         return "Tipo de via: "+this.tipoVia;
      }
 
      imprimirTodosPropietarios(){
+
          let plantaKeys=this.mapaPropietariosEdificio.keys();
-         return plantaKeys;
+         let text="";
+         for(let i=0;i<this.mapaPropietariosEdificio.size;i++){
+            let planta=plantaKeys.next().value;
+            text+="Planta: "+planta+"\n";
+            let puertaKeys=this.mapaPropietariosEdificio.get(planta).keys();
+            for(let k=0;k<this.mapaPropietariosEdificio.get(planta).size;k++){
+               let puerta=puertaKeys.next().value;
+
+               text+="          Puerta: "+puerta+"\n";
+               
+               for(let e=0;e<this.mapaPropietariosEdificio.get(planta).get(puerta).length;e++){
+                  let propietarios=this.mapaPropietariosEdificio.get(planta).get(puerta);
+                  text+="           "+propietarios[e]+"\n";
+               }
+            }
+         }
+
+         return text;
+
      }
      modificarCodigoPostal(nuevocodigoPostal){
         return this.codigoPostal=nuevocodigoPostal;
@@ -63,4 +82,3 @@ class Edificio{
         return this.tipoVia=nuevoTipoVia;
      }
 }
-export {Edificio};

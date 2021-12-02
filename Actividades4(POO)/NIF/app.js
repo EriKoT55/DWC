@@ -7,7 +7,7 @@ function comprobarNif(nif){
     // Comprobar el if con el pattern no funciona preguntar
     if(nif.charAt(0)==/[0-9]/){
 
-       let resto = nif.split("")%23;
+       let resto = 23%nif.split("");
         
     }else if(nif.charAt(0)=="X"){
         nif.replace("X",0);
