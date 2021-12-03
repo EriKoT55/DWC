@@ -1,6 +1,6 @@
 /* -----------OPERADOR INSTANCEOF-------------*/
 // Es un operador parecido a typeof pero para utilizarlo con objetos
-// La razón de usarlo es que todos los todos los objetos pertenecen
+// La razón de usarlo es que todos los objetos pertenecen
 // al mismo tipo de datos: Object
 
 function Punto(coordX, coordY) {

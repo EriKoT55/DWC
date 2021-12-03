@@ -39,7 +39,7 @@ const palabras=['Ñu','Águila','boa','oso','marsopa','Nutria'];
 palabras.sort((a,b)=>a.localeCompare(b,'es'));
 console.log(palabras); // Salida: [ 'Águila', 'boa', 'marsopa', 'Nutria', 'Ñu', 'oso' ]
 
-// MÉTODO FOREACH
+//********************************** MÉTODO FOREACH ***************************************
 // Método que permite recorrer arrays, mapas y conjuntos.
 // Permite establecer la acción que se realizará con cada elemento del array.
 // Este método no tiene en cuenta los elementos indefinidos.

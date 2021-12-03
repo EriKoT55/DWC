@@ -16,7 +16,7 @@ console.log("Me llamo " + nombre); //Funciona usando el operador de concatenaci�
 console.log(`Me llamo ${nombre}`); //Funciona usando plantilla de string (String templates)
 console.log(`En un día hay ${24*60*60} segundos`); //Otro ejemplo con plantilla de string
 
-/* 3. SECUENCIAS DE ESCAPE */
+/**********************  3. SECUENCIAS DE ESCAPE *************************************/
 //Salto de línea (\n)
 console.log(`Una línea \nOtra línea`);
 //Tabulado (\t)

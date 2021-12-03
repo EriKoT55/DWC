@@ -20,7 +20,7 @@ f(10,20); // Salida: x=10 y=20 mas=
 f(10,20,30); // Salida: x=10 y=20 mas=30
 f(10,20,30,40); // salida: x=10 y=20 mas=30,40
 
-// El operador de propagación en este contecto convierte una lista de 
+// El operador de propagación en este contexto convierte una lista de 
 // parámetros en un array.
 
 // Ejemplo 2. Cálculo de la media para usar cualquier número de parámetros

@@ -69,7 +69,7 @@ function g(a){
     a[0]=9;
 }
 g(array);
-console.log(array[0]); // Salida: 9
+console.log(array); // Salida: 9
 
 /* Interpretación del código:
     - En la primera línea se crea una variable global llamada array que es una
@@ -93,6 +93,8 @@ MORALEJA: Los tipos básicos (booleanos, números y strings) se pasan por valor,
     objeto, pasan una referencia al objeto original; si una función se modifica
     el parámetro relacionado, se modificará realmente el array original.
 
+    ----------------------------------------------------------------------------
+    
 En definitiva, los datos simples se pasan por valor, los objetos se pasan por
 refencia.
 */

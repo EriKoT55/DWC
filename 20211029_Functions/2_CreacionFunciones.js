@@ -60,7 +60,10 @@ console.log(triple(z)); // Salida: NaN
 // Función para contar números pares de un array
 function pares(array) {
     let nPares = 0;
+    //Si el parametro(array) que le pasas es un array
     if (array instanceof Array) {
+    /*La sentencia sentencia for...of ejecuta un bloque de código para cada elemento de un objeto iterable,
+     como lo son: String, Array, objetos similares a array */
         for (n of array) {
             if (n%2 === 0) {
                 nPares++;
