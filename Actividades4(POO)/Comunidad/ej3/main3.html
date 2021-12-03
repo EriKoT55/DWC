@@ -107,7 +107,30 @@
         document.write(`<h1>[${edificio.tipoVia}&nbsp;&nbsp;${edificio.nombreVia},&nbsp;
                 ${edificio.numeroEdificio}&nbsp;&nbsp;C.P ${edificio.codigoPostal}]</h1>`);
 
-        document.write(edificio.imprimirTodosPropietarios());
+                resultado = ObjEdificio.imprimirTodosPropietarios();
+                
+        var br = resultado.replace(/\n/g,"<br>")
+        var tab = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+        var imprimir = br.replace(/\t/g,tab)
+
+        var x = imprimir.split(" ")
+
+        for(let i = 0; i <x.length;i++){
+            
+            if(x[i].includes("Planta:")){
+                x[i] = '<h2 class="planta">' + x[i];
+                x[i+1] += "</h2>"
+            }
+            if(x[i].includes("Puerta:")){
+                x[i] = "<h3>" +tab+ x[i];
+                x[i+1] += "</h3>"
+            }
+         
+        }
+
+        var x = x.join(" ")
+
+    document.write(x);
        
     </script>
 </body>
