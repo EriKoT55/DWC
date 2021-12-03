@@ -149,7 +149,7 @@ let expresion12 = /([a-z]{2}[0-9]){3}/;
 // la z en un texto, luego un número. El último número entre llaves
 // hace referencia a todo el paréntesis, por lo que las dos letras
 // y el número deberán aparecer tres veces seguidas
-console.log(expresion12.test('ad3rf1hj4')); // Salida: true
+console.log(expresion12.test('ad 3rf1hj4')); // Salida: true
 console.log(expresion12.test('a3f1j4')); // Salida: false
 console.log(expresion12.test('ab3fg1')); // Salida: false
 
@@ -182,7 +182,7 @@ const elements = ['Fire', 'Air', 'Water'];
 console.log(elements.join());
 // expected output: "Fire,Air,Water"
 
-console.log(elements.join(''));
+console.log(elements.join(' '));
 // expected output: "FireAirWater"
 
 console.log(elements.join('-'));
