@@ -59,8 +59,33 @@
     
     //Con replace() puedes ir modificando cada condicion del patron de aqui abajo,
     // y asi poderlo en HTML sin modificar imprimirTodosPropietarios
-    document.write(ObjEdificio.imprimirTodosPropietarios());
+
+
+    resultado = ObjEdificio.imprimirTodosPropietarios();
+        var br = resultado.replace(/\n/g,"<br>")
+        var tab = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+        var imprimir = br.replace(/\t/g,tab)
+
+        var x = imprimir.split(" ")
+
+        for(let i = 0; i <x.length;i++){
+            
+            if(x[i].includes("Planta:")){
+                x[i] = '<h2 class="planta">' + x[i];
+                x[i+1] += "</h2>"
+            }
+            if(x[i].includes("Puerta:")){
+                x[i] = "<h3>" +tab+ x[i];
+                x[i+1] += "</h3>"
+            }
+         
+        }
+
+        var x = x.join(" ")
+
+    document.write(x);
     
+
     </script>
 </body>
 </html>
