@@ -25,7 +25,7 @@ class Paciente{
     
         if(tipoComprobacion=='numeroRegistro'){
     
-            patronNumeroRegistro=/^[A-Z]{3}[0-9]{3}/;
+            patronNumeroRegistro=/^[A-Z]{3}[0-9]{3}$/;
     
             if(patronNumeroRegistro.test(elementoAComprobar)==true){
                 return true
@@ -35,7 +35,7 @@ class Paciente{
     
         }else if(tipoComprobacion=='nombre'){
     
-            patronNombreCompleto =/^[A-Z]{1}[a-z][" "]{1}[A-Z]{1,2}\.$/;
+            patronNombreCompleto =/^[A-ZÁÉÍÓÚÜÇ]{1}[a-záéíóúüç]\/s{1}[A-ZÁÉÍÓÚÜÇ]{1,2}\.$/;
            
             if(patronNombreCompleto.test(elementoAComprobar)==true){
                 return true;
@@ -45,7 +45,7 @@ class Paciente{
     
         }else if(tipoComprobacion=='numeroSS'){
     
-            patronNumeroSS=/[0-9]{1,9}/;
+            patronNumeroSS=/^[0-9]{1,9}$/;
     
             if(patronNumeroSS.test(elementoAComprobar)==true){
                 return true;
@@ -55,7 +55,7 @@ class Paciente{
     
         }else if(tipoComprobacion=='direccion'){
     
-            patronDireccion=/((^(C\/|Av){1}[A-Z]{1}[A-Za-z])|(^(C\/|Av){1}[A-Z]{1}([A-Za-z][" "]{1})+))\,[0-9]+/;
+            patronDireccion=/((^(C\/|Av\.){1}[A-Z]{1}[A-Za-z])|(^(C\/|Av\.){1}[A-Z]{1}([A-Za-z]\/s{1})+))\,[0-9]+$/;
     
             if(patronDireccion.test(elementoAComprobar)==true){
                 return true;
