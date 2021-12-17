@@ -11,10 +11,10 @@
  */
 
 const comprobarPatrones = function (elementoAComprobar, tipoComprobacion) {
-    let patronNumeroRegistro; // Contiene el patrón para comprobar el número de registro
-    let patronNombreCompleto; // Contiene el patrón para comprobar el nombre
-    let patronNumeroSS; // Contiene el patrón para comprobar el número de la seguridad social
-    let patronDireccion; // Contiene el patrón para comprobar la dirección
+    let patronNumeroRegistro=/^[A-Z]{3}[0-9]{3}$/; // Contiene el patrón para comprobar el número de registro
+    let patronNombreCompleto=/^[A-ZÁÉÍÓÚÜÇ]{1}[a-záéíóúüç]\/s{1}[A-ZÁÉÍÓÚÜÇ]{1,2}\.$/; // Contiene el patrón para comprobar el nombre
+    let patronNumeroSS=/^[0-9]{1,9}$/; // Contiene el patrón para comprobar el número de la seguridad social
+    let patronDireccion=/((^(C\/|Av\.){1}[A-Z]{1}[A-Za-z])|(^(C\/|Av\.){1}[A-Z]{1}([A-Za-z]\/s{1})+))\,[0-9]+$/; // Contiene el patrón para comprobar la dirección
 
     let patrones = new Map([
         ['numeroRegistro', patronNumeroRegistro],
