@@ -31,77 +31,60 @@ let elemento;
 let tipo;
 let resultadoCorrecto;
 
-/*Meter un mapa dentro de otro mapa
+//Meter un mapa dentro de otro mapa
 //MAP 1: clave tipo, MAP 2(dentro del anterior): clave elemento, valor resultadoCorrecto
 
-// COMPROBACIÓN numeroRegistro
-mapComprobacion = new Map(["numeroRegistro", new Map(["ACD123",true]), (["AC123",false]),(["ACGTHT123",false]),(["145265",false]),(["ACG124w",false])]);
-tipo = new Map(["numeroRegistro", new Map(["AC123",false])]);
-tipo = new Map(["numeroRegistro", new Map(["ACGTHT123",false])]);
-tipo = new Map(["numeroRegistro", new Map(["145265",false])]);
-tipo = new Map(["numeroRegistro", new Map(["ACG124w",false])]);
 
-// COMPROBACIÓN nombreCompleto
-mapComprobacion = new Map(["nombre", new Map(["Fernández J.",true]),(["López Ariadna M.",false]),(["Castillo JL.",true]),(["Castillo JSL.",false]),(["López M",false]),(["Martinez",false]),(["J.",false])]);
-tipo = new Map(["nombre", new Map(["López Ariadna M.",false])]);
-tipo = new Map(["nombre", new Map(["Castillo JL.",true])]);
-tipo = new Map(["nombre", new Map(["Castillo JSL.",false])]);
-tipo = new Map(["nombre", new Map(["López M",false])]);
-tipo = new Map(["nombre", new Map(["Martinez",false])]);
-tipo = new Map(["nombre", new Map(["J.",false])]);
-
-// COMPROBACIÓN numeroSS
-mapComprobacion = new Map(["numeroSS", new Map(["010125789",true]),(["a14568892",false]),(["010125789",false]),(["010125789",false])]);
-tipo = new Map(["numeroSS", new Map(["a14568892",false])]);
-tipo = new Map(["numeroSS", new Map(["010125789",false])]);
-tipo = new Map(["numeroSS", new Map(["010125789",false])]);
-
-//COMPROBACION direccion
-mapComprobacion = new Map(["direccion", new Map(["C/Federico lorca, 50",true]),(["Av.Argentina, 123",true]),(["C/lorenzo, 3",false]),(["Av.Gimenez Losantos, 40",true]),(["C/Almirante 45",false]),(["C/Almirante",false]),(["C/45, 45",false])]);
-*/
-const mapComprobacion = new Map([
-                        ["numeroRegistro", new Map([
-                                        ["ACD123",true],
-                                        ["AC123",false],
-                                        ["ACGTHT123",false],
-                                        ["145265",false],
-                                        ["ACG124w",false]
-                        ])],
-                        ["nombre",new Map([
-                                 ["Fernández J.",true],
-                                 ["López Ariadna M.",false],
-                                 ["Castillo JL.",true],
-                                 ["Castillo JSL.",false],
-                                 ["López M",false],
-                                 ["Martinez",false],
-                                 ["J.",false]
-                        ])],
-                        ["numeroSS", new Map([
-                                ["010125789",true],
-                                ["a14568892",false],
-                                ["010125789",false],
-                                ["010125789",false]
-                        ])],
-                        ["direccion", new Map([
-                                ["C/Federico lorca, 50",true],
-                                ["Av.Argentina, 123",true],
-                                ["C/lorenzo, 3",false],
-                                ["Av.Gimenez Losantos, 40",true],
-                                ["C/Almirante 45",false],
-                                ["C/Almirante",false],
-                                ["C/45, 45",false]
-                        ])]]);
+const jsonComprobacion = {"numeroRegistro":{"ACD123":true,
+                                          "AC123":false,
+                                        "ACGTHT123":false,
+                                        "145265":false,
+                                        "ACG124w":false
+                                },
+                        "nombre":{"Fernández J.":true,
+                                 "López Ariadna M.":false,
+                                 "Castillo JL.":true,
+                                 "Castillo JSL.":false,
+                                 "López M":false,
+                                 "Martinez":false,
+                                 "J.":false
+                                },
+                        "numeroSS":{"010125789":true,
+                                   "a14568892":false,
+                                   "010125789":false,
+                                   "010125789":false
+                                },
+                        "direccion":{"C/Federico lorca, 50":true,
+                                    "Av.Argentina, 123":true,
+                                    "C/lorenzo, 3":false,
+                                    "Av.Gimenez Losantos, 40":true,
+                                    "C/Almirante 45":false,
+                                    "C/Almirante":false,
+                                    "C/45, 45":false
+                                }         
+                                };
 
 
-        for(let [tipo,datos] of mapComprobacion){
-                for(let [elemento,resultadoCorrecto] of datos){
+let arrayTipos = Object.keys(jsonComprobacion)
 
+        for(let tipo of arrayTipos){
+
+                jsonComprobacion[tipo];
+                let arrayElementos = Object.keys(jsonComprobacion[tipo]);
+
+                for(let elemento of arrayElementos){
+                        
+                        resultadoCorrecto=jsonComprobacion[tipo][elemento];
                         console.log(`Tipo de comprobacion: ${tipo} - Elemento a comprobar: ${elemento}\n` +
                         `Resultado correcto: ${resultadoCorrecto} - Resultado obtenido: ${comprobarPatrones(elemento, tipo)}`);
                         console.log(`\n`);
                 }
+
         }
 
+        console.log(`Tipo de comprobacion: ${tipo} - Elemento a comprobar: ${elemento}\n` +
+                `Resultado correcto: ${resultadoCorrecto} - Resultado obtenido: ${comprobarPatrones(elemento, tipo)}`);
+        console.log(`\n`);
 
 
 
