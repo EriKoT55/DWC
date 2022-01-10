@@ -14,7 +14,7 @@ if(j1[randomj1]==j2[randomj2] || j1[randomj1]=="&#129308" && j2[randomj2]=="&#12
     document.write("<br> empate");
 }else if(j1[randomj1]=="&#129308" && j2[randomj2]=="&#128406" || j1[randomj1]=="&#128406" && j2[randomj2]=="&#129306" || j1[randomj1]=="&#129306" && j2[randomj2]=="&#129307"){
     document.write("<br> j1 gana");
-}else if(j1[randomj1]=="&#128406" && j2[randomj2]=="&#129307" || j1[randomj1]=="&#129306" && j2[randomj2]=="&#128406" || j1[randomj1]=="&#129307" && j2[randomj2]=="&#129306"){
+}else{
     document.write("<br> j2 gana");
 }
 
