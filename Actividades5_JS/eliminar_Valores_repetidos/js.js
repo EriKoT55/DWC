@@ -3,11 +3,12 @@ var randomBalls;
 
 const NUMS_SIN_REPETIR = new Set();
 
-randomBalls=Math.floor(Math.random()*10 +5);
-randomNums=Math.floor(Math.random()*9 + 10102);
+randomBalls=Math.floor(Math.random()*11 +5);
+randomNums=Math.floor(Math.random()*10 + 10102);
 
-document.write("<br>");
-document.write("<h3>Entre estas "+randomBalls+" bolas... </h3><br>");
+
+document.write("<h3>Entre estas "+randomBalls+" bolas... </h3>");
+
 document.write("<div>");
 for(let i=0;i<randomBalls;i++){
     randomNums=Math.floor(Math.random()*9 + 10102);
@@ -17,13 +18,10 @@ for(let i=0;i<randomBalls;i++){
 
 }
 document.write("</div>");
-document.write("<br>");
-document.write("<br>");
+
 
 document.write("<h3>Hay "+NUMS_SIN_REPETIR.size+" bolas distintas</h3>");
 
-document.write("<br>");
-document.write("<br>");
 document.write("<div>");
     for(x of NUMS_SIN_REPETIR){
         document.write("<h1 class='h11'>&#"+x+"</h1>");
