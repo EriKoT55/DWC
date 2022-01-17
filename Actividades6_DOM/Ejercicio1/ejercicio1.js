@@ -56,10 +56,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
     /* NO FUNCIONA */
     // links a http://prueba/
 
-    let linksPrueba=numA["http://prueba/"]
+    let contador=0;
+
+    for(let i=0;i<numA.length;i++){
+
+        if(numA[i].href=="http://prueba/"){
+            contador++;
+        }
+
+    }
+
+    
 
     let paragrafo5 = document.createElement("p");
-    let contenidoLinkPrueba = document.createTextNode("El último enlace apunta a: " + linksPrueba.length);
+    let contenidoLinkPrueba = document.createTextNode("El último enlace apunta a: " + contador);
 
     paragrafo5.appendChild(contenidoLinkPrueba);
 
