@@ -166,6 +166,9 @@ let expresion14 = /^((5[012])|([0-4][0-9]))([0-9]{3})$/;
 console.log(expresion14.test(cp1)); // Salida: true
 console.log(expresion14.test(cp2)); // Salida: false
 
+// i indica que validaremos letras mayúsculas y minúsculas (case-insensitive)
+let solLetras =/^[A-Z]+$/i;
+
 // SÍMBOLOS ABREVIADOS
 // Son símbolos que se usan con el carácter backlash y que permite
 // escribir expresiones de forma aún más rápida.
