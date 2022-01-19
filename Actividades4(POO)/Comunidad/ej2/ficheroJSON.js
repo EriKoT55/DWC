@@ -28,7 +28,6 @@ let Edificio1=JSON.parse(edificio1);
 //console.log(Edificio1.mapaPropietariosEdificio.A["1A"]);
 
 
-
 function colorRandomFondo(){
 
     let red;
