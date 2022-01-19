@@ -81,30 +81,10 @@ class Paciente{
     }
 }
 
-const registroPacientes = new Map([
-    [`AAA024`, `Fernández M. (321790059) -> C/Recoletos, 50`],  
-    [`BCD827`, `Ruíz P. (100973253) -> C/Esquerdo izquierdo, 103`],
-    [`YUN835`,`Benítez E. (154811767) -> Av.Argentina, 5`]
-]);
 
-var numeroRegistroPaciente;
-var nombrePaciente;
-var numeroSSPaciente;
-var direccionPaciente;
-const agendaPacientes = new Map();
-var contadorPacientes = 0;
-
-for([registro,info] of registroPacientes){
-
-    contadorPacientes++;
-
-    numeroRegistroPaciente=registro;
-   nombrePaciente=info.split(" (")[0];
-   numeroSSPaciente=info.split(" (")[1].split(") ")[0];
-   direccionPaciente=info.split(" -> ")[1];
-
-   agendaPacientes.set(contadorPacientes,new Paciente(numeroRegistroPaciente,nombrePaciente,numeroSSPaciente,direccionPaciente));
-   
-}
-
-console.log(agendaPacientes);
+let paciente1 = new Paciente("ABC123","Erik MM.","123456789","C/Federico lorca, 50");
+let paciente2= new Paciente("ECZ456","Pepe J.","123456781","Av.Mis huevos, 20");
+console.log(paciente1);
+paciente1.modificarDireccion("Av.Argentina, 123");
+console.log(paciente1);
+console.log(paciente2);

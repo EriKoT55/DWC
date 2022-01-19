@@ -250,6 +250,91 @@ dias2[0] = '1';
 console.log(dias);
 console.log(dias2);
 
+//METODO split()
+// divide un objeto de tipo String en un array (vector) de cadenas mediante la separación de la 
+// cadena en subcadenas.
+// Sintaxis
+// cadena.split([separador][,limite])
+
+/*
+Parámetros:
+
+-separador
+Especifica el carácter a usar para la separación de la cadena. 
+El separador es tratado como una cadena o como una expresión regular. 
+Si se omite el separador, el array devuelto contendrá un sólo elemento con la cadena completa.
+
+-limite
+Opcional. Entero que especifica un límite sobre el número de divisiones a realizar. 
+El método split() todavía se divide en todas las concordancias del separador, 
+pero divide la matriz devuelta en la cantidad de elementos impuesta por el limite.
+
+DESCRIPCION
+
+Cuando se encuentra, 
+el separador es eliminado de la cadena y las subcadenas obtenidas se devuelven en un array. 
+Si el separador no es encontrado o se omite, 
+el array contendrá un único elemento con la cadena original completa. 
+Si el separador es una cadena vacía la cadena es convertida en un array de carácteres.
+
+Si el separador es una expresión regular que contiene paréntesis de captura, 
+entonces cada vez que el separador concuerda, los resultados 
+(incluído cualquier resultado indefinido) de los paréntesis de captura 
+son divididos en el array resultante. Sin embargo no todos los navegadores soportan esta característica.
+
+*/
+
+const registroPacientes = new Map([
+    [`AAA024`, `Fernández M. (321790059) -> C/Recoletos, 50`],  
+    [`BCD827`, `Ruíz P. (100973253) -> C/Esquerdo izquierdo, 103`],
+    [`YUN835`,`Benítez E. (154811767) -> Av.Argentina, 5`]
+]);
+
+var numeroRegistroPaciente;
+var nombrePaciente;
+var numeroSSPaciente;
+var direccionPaciente;
+const agendaPacientes = new Map();
+var contadorPacientes = 0;
+
+for([registro,info] of registroPacientes){
+
+    //console.log(registro,info);
+    /*MOSTRARA LA INFORMACION DEL ARRAY HASTA DONDE LE DIGAS CON UN SIGNO */
+    /*DEPENDIENDO DE LO QUE QUIERAS COGER PONES UN [O] o [1]
+     EL [0] COGERA LO QUE ESTA A LA IZQUIERDA DEL SEPARADOR Y EL [1] LO QUE ESTA A LA DERECHA
+    */
+   console.log(info.split(" (")[0]);
+}
+
+/* resultado:
+##### console.log(info.split(" ->")[0]);
+Fernández M. (321790059)
+Ruíz P. (100973253)
+Benítez E. (154811767)
+*/
+
+
+function dividirCadena(cadenaADividir,separador) {
+    var arrayDeCadenas = cadenaADividir.split(separador);
+    console.log('<p>La cadena original es: "' + cadenaADividir + '"');
+    console.log('<br>El separador es: "' + separador + '"');
+    console.log("<br>El array tiene " + arrayDeCadenas.length + " elementos: ");
+ 
+    for (var i=0; i < arrayDeCadenas.length; i++) {
+        console.log(arrayDeCadenas[i] + " / ");
+    }
+ }
+ 
+ var cadenaVerso = "Oh brave new world that has such people in it.";
+ var cadenaMeses = "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec";
+ 
+ 
+ dividirCadena(cadenaVerso," ");
+ dividirCadena(cadenaVerso);
+ dividirCadena(cadenaMeses, ",");
+ 
+
 
 // Método SPLICE
 // Permite eliminar definitivamente los elementos de un array

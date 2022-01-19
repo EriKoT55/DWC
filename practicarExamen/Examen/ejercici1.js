@@ -12,9 +12,12 @@
 const comprobarPatrones = function (elementoAComprobar, tipoComprobacion) {
     let patronNumeroRegistro=/^[A-ZÁÉÍÚÓÇ]{3}[0-9]{3}$/; // Contiene el patrón para comprobar el número de registro
     let patronNombreCompleto=/^[A-ZÁÉÍÚÓÇ]{1}[a-záéíóúç]+\s[A-Z]{1,2}\.$/; // Contiene el patrón para comprobar el nombre
-    let patronNumeroSS=/^[0-9]{9}$/; // Contiene el patrón para comprobar el número de la seguridad social
-    let patronDireccion=/^(Av|C\/){1}(^[A-ZÁÉÍÚÓÇ]{1}[A-ZÁÉÍÚÓÇa-záéíóúç]+|^[A-ZÁÉÍÚÓÇ]{1}[A-ZÁÉÍÚÓÇa-záéíóúç]+\s[A-ZÁÉÍÚÓÇa-záéíóúç]+)/; // Contiene el patrón para comprobar la dirección
-
+    let patronNumeroSS=/^[0-9]{1,9}$/; // Contiene el patrón para comprobar el número de la seguridad social
+    let patronDireccion=/^(Av\.|C\/){1}[A-ZÁÉÍÚÓÇ]{1}[a-záéíóúçñ]+\s?[a-záéíóúçñ\s]*\,\s[0-9]+$/; // Contiene el patrón para comprobar la dirección
+                                                                //METO EL ESPACIO DENTRO DE LOS CORCHETES
+                                                                // YA QUE ASI SE PERMITE CUALQUIERA DE LO
+                                                                // QUE ESTA DENTRO Y PUEDO LETRA/S, PALABRA/S
+                                                                // Y ESPACIO/S       
     let patrones = new Map([
         ['numeroRegistro', patronNumeroRegistro],
         ['nombre', patronNombreCompleto],
@@ -22,8 +25,6 @@ const comprobarPatrones = function (elementoAComprobar, tipoComprobacion) {
         ['direccion', patronDireccion]
     ]);
     
-    return //Devolver el valor true si se cumple el patrón y false si no se cumple
+    return patrones.get(tipoComprobacion).test(elementoAComprobar);
 }
 
-
-console.log(patronNombreCompleto.test("Fernández J."));
