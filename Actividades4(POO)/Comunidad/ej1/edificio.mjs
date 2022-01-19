@@ -15,22 +15,22 @@ class Edificio{
         this.mapaPropietariosEdificio=mapaPropietariosEdificio;
     }
 
-    //Esto sera introducido dentro del Map siendo este la CLAVE
+    //Esto sera introducido dentro del Map siendo este la CLAVE y VALOR que sera el segundo mapa
     agregarPlanta(numeroPlanta){
       let planta=new Map();
       this.mapaPropietariosEdificio.set(numeroPlanta,planta);
     }
 
-    //Esto sera un Map que ira dentro del primer Map
+    //Metemos la CLAVE numeroPuerta y el VALOR puerta que sera un Array que ira dentro del segundo Map
     agregarPuerta(numeroPlanta,numeroPuerta){
 
-        let puerta=[];
+        let puerta= [];
         let planta= this.mapaPropietariosEdificio.get(numeroPlanta);
 
         planta.set(numeroPuerta,puerta);
 
     }
-    //Esto sera un array, que va dentro del segundo Map
+    //metemos el propietario dentro del array
     agregarPropietario(nombrePropietario,numeroPlanta, numeroPuerta){
 
         let planta= this.mapaPropietariosEdificio.get(numeroPlanta);

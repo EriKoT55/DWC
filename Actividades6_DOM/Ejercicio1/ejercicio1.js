@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     document.getElementById("info").appendChild(paragrafo4);
 
 /***********************************************************************/    
-    /* NO FUNCIONA */
+   
     // links a http://prueba/
 
     let contador=0;
@@ -69,11 +69,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
     
 
     let paragrafo5 = document.createElement("p");
-    let contenidoLinkPrueba = document.createTextNode("El último enlace apunta a: " + contador);
+    let contenidoLinkPrueba = document.createTextNode("Hay: " + contador+" http://prueba/");
 
     paragrafo5.appendChild(contenidoLinkPrueba);
 
     document.getElementById("info").appendChild(paragrafo5);
+    
+/***********************************************************************/
+
 
     /*document.getElementById("info").innerHTML="<p>"+numA.length+"</p>";*/
 
