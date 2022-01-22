@@ -1,30 +1,12 @@
 document.addEventListener("DOMContentLoaded", function (event) {
 
-
-    /* Creo el nodo P y el NodoText hago que contenido sea hijo de paragrafo 
-     * y despues lo muestro siendo paragrafo hijo del div(info) */
-    // PARA MOSTRAR CONTENIDO EN EL DIV
     // a
     let numA = document.getElementsByTagName("a");
-
-    let paragrafo1 = document.createElement("p");
-    let contenidoL = document.createTextNode("Numero de links: " + numA.length);
-
-    paragrafo1.appendChild(contenidoL);
-
-    document.getElementById("info").appendChild(paragrafo1);
 
     /***********************************************************************/
 
     // p
     let numP = document.getElementsByTagName("p");
-
-    let paragrafo2 = document.createElement("p");
-    let contenidoP = document.createTextNode("Numero de paragrafos: " + numP.length);
-
-    paragrafo2.appendChild(contenidoP);
-
-    document.getElementById("info").appendChild(paragrafo2);
 
     /***********************************************************************/
 
@@ -32,52 +14,51 @@ document.addEventListener("DOMContentLoaded", function (event) {
     let penultimo = numA.length-2;
     let penultimoA = numA[penultimo];
 
-    let paragrafo3 = document.createElement("p");
-    let contenido_penult_a = document.createTextNode("El penúltimo enlace apunta a: " + penultimoA);
-
-    paragrafo3.appendChild(contenido_penult_a);
-
-    document.getElementById("info").appendChild(paragrafo3);
-
 /***********************************************************************/
 
     // ultimo a
     let ultimo = numA.length-1;
     let ultimoA = numA[ultimo];
 
-    let paragrafo4 = document.createElement("p");
-    let contenido_ult_a = document.createTextNode("El último enlace apunta a: " + ultimoA);
-
-    paragrafo4.appendChild(contenido_ult_a);
-
-    document.getElementById("info").appendChild(paragrafo4);
-
 /***********************************************************************/    
    
     // links a http://prueba/
 
-    let contador=0;
+    let contadorA=0;
 
     for(let i=0;i<numA.length;i++){
 
         if(numA[i].href=="http://prueba/"){
-            contador++;
+            contadorA++;
         }
 
     }
 
     
-
-    let paragrafo5 = document.createElement("p");
-    let contenidoLinkPrueba = document.createTextNode("Hay: " + contador+" http://prueba/");
-
-    paragrafo5.appendChild(contenidoLinkPrueba);
-
-    document.getElementById("info").appendChild(paragrafo5);
-    
 /***********************************************************************/
 
+    //Numero de enlaces por parrafo
 
-    /*document.getElementById("info").innerHTML="<p>"+numA.length+"</p>";*/
+    const numDe_aXparrafo = new Map();
+    let contador_aXp=0;
+
+    for(let parrafo of numP){
+        contador_aXp++;
+        numDe_aXparrafo.set(contador_aXp, parrafo.getElementsByTagName("a").length);
+    }
+
+    //Mostrar contenido
+
+    let text= "Numero de links: " + numA.length+"<br>"+
+    "<br>Numero de paragrafos: " + numP.length+"<br>"+
+    "<br>El penúltimo enlace apunta a: " + penultimoA+"<br>"+
+    "<br>El último enlace apunta a: " + ultimoA+"<br>"+
+    "<br>Hay: " + contadorA +" http://prueba/ <br>";
+   
+    for(let [numP,numA] of numDe_aXparrafo){
+        text+="<br>Nombre de enlaces del parrafo = "+numP+" = "+numA+"<br>";
+    }
+
+    document.getElementById("info").innerHTML=text;
 
 });
