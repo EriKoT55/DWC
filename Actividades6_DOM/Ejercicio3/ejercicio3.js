@@ -34,11 +34,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
     //  Creo el nuevo li
     let nuevoLi = document.createElement("li");
 
+    let negritaLi= document.createElement("strong");
+
     // Creo nodo del contenido del li
     let contenidoLi = document.createTextNode(contenidoLiPrompt);
 
     // Añado el nodo contenido al li
-    nuevoLi.appendChild(contenidoLi);
+    negritaLi.appendChild(contenidoLi);
+    nuevoLi.appendChild(negritaLi);
 
     //cojo el ol por su tag name o sea ol 
     let ol=document.getElementsByTagName("ol");
