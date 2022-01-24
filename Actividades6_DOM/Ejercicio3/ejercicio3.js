@@ -1,12 +1,13 @@
-document.addEventListener("DOMContentLoaded", function(event) { 
+document.addEventListener("DOMContentLoaded", function (event) {
+
     let contenidoLiPrompt;
     let num;
     let seguirNum = true;
     let seguirP = true;
 
     do {
-        contenidoP = prompt("Ponga el contenido del nuevo paragrafo: ");
-        if (isNaN(contenidoLiPrompt) && contenidoLiPrompt == "") {
+        contenidoLiPrompt = prompt("Ponga el contenido del nuevo paragrafo: ");
+        if ( contenidoLiPrompt != "") {
             seguirP = false;
         } else if (contenidoLiPrompt == null) {
             seguirP = false;
@@ -17,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     do {
 
-        num = prompt("Ponga un numero del 1 al 10: ");
+        num = parseInt(prompt("Ponga un numero del 1 al 10: "));
 
         if (num >= 1 && num <= 10 && !isNaN(num)) {
             seguirNum = false;
@@ -29,18 +30,26 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     } while (seguirNum == true);
 
+    //console.log(typeof num);
     //  Creo el nuevo li
     let nuevoLi = document.createElement("li");
 
     // Creo nodo del contenido del li
-    let contenidoLi = document.createTextNode("Holaa");
+    let contenidoLi = document.createTextNode(contenidoLiPrompt);
 
     // Añado el nodo contenido al li
     nuevoLi.appendChild(contenidoLi);
 
-    // li anterior
-    let anteriorLi = document.getElementById("li")[0];
+    //cojo el ol por su tag name o sea ol 
+    let ol=document.getElementsByTagName("ol");
 
-    // No añade nada PORQUE
-    document.body.insertBefore(nuevoLi,anteriorLi);
+    // li anterior
+    let anteriorLi=document.getElementsByTagName("li")[num-1];
+    
+    //Introduzco li despues del anterior, ol[0] por que al coger por tagName me devuelve
+    // un array de una sola posición si no lo pono peta, ya que no selecciono nada 
+    // en la lista
+    ol[0].insertBefore(nuevoLi,anteriorLi);
+
+
 });
