@@ -19,12 +19,65 @@ function habilitarSelect(selectID) {
 
 function retornaValor() {
 
-    let form = document.getElementById('nombre');
-     console.log(form.value);
+    let text="";
+
+    let nombre = document.getElementById("nombre");
+    text+=nombre.value+" ";
+
+    //Con getElementsByTagName(), se cogen los valores con un for
+    let textarea = document.getElementsByName("mensaje");
+    for(let i=0;i<textarea.length;i++){
+        text+=textarea[i].value+" ";
+    }
+    
+    let radioBtn = document.getElementsByName("sexo");
+    for (let i=0;i<radioBtn.length;i++){
+
+        if(radioBtn[i].checked==true){
+            text+= radioBtn[i].value+" ";
+        }
+
+    }
+
+    let selectBici = document.getElementById("marcaBici");
+
+    for(let i=0; i<selectBici.length;i++){
+
+       if(selectBici.options[i].selected==true){
+        text+= selectBici[i].value+" " ;
+       }
+
+    }
+
+    let selectCoche = document.getElementById("marcaCoche");
+
+    for(let i=0; i<selectCoche.length;i++){
+
+        if(selectCoche.options[i].selected==true){
+            //ME GUSTARIA NO COGER EL VALUE SI NO EL COTENIDO
+            text+=selectCoche.value+" ";
+        }
+
+    }
+
+    console.log(text);
+
+     /*LO UTILICE PARA MOSTRAR EL CONTENIDO DEL TEXTO CON UN P pero no se
+
+     document.getElementById("body").innerHTML=text;
+
+    let p=document.createElement("p");
+
+    let contenidoP= document.createTextNode(text);
+
+    document.write(p.appendChild(contenidoP));*/
+    
  
  }
  
  
  function validarFormulario(formID){
+
      retornaValor();
+
  }
