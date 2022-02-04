@@ -102,6 +102,8 @@ function retornaValor(elementForm) {
 
 }
 
+// MIRAR GIT HUB PARA ACABAR ESTA FUNCION Y ENTENDER COMO HIZO ESTE EJERCICIO
+
 // Pasar el elemento del formulario a retorna valor, para poder trabajar 
 function validarFormulario(formID) {
 
