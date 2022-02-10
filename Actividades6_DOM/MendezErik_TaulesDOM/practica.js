@@ -3,51 +3,55 @@ function crearTablaColores(tablaColores, numColores) {
     let elementTableID = document.getElementById(tablaColores);
 
     //Numero de columnas
-    let numColumnas = elementTableID.row[0].cells.lenght;
+    let numColumnas = elementTableID.rows[0].cells.length;
 
-    crearTabla(numColores, numColumnas);
+    let numFilas = document.getElementById(numColores).value;
+
+    crearTabla(numFilas, numColumnas);
 
 }
 
 function crearTabla(numFila, numColumna) {
-
+    let elementTableID = document.getElementById("tablaColores");
 
     let tBodyElement = document.createElement("tbody");
 
-/* BUCLE PARA AÑADIR LAS FILAS Y COLUMNAS INTRODUCIDAS POR PARAMETRO 
-https://es.stackoverflow.com/questions/393709/crear-una-tabla-con-js-con-una-columna-y-una-fila-fijas */
-    for (let i=0;i<numFila;i++) {
+    elementTableID.appendChild(tBodyElement);
+   
+    for (let k = 0; k < numFila; k++) {
         let trElement = document.createElement("tr");
+        for (let i = 0; i < numColumna; i++) {
 
-        let tdElement = document.createElement("td");
 
-        let randomRed = Math.floor(Math.random() * 255 + 1);
-        let randomGreen = Math.floor(Math.random() * 255 + 1);
-        let randomBlue = Math.floor(Math.random() * 255 + 1);
+            let tdElement = document.createElement("td");
 
-        /* https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_table_create */
-        /*var td = document.createElement("td");
-  var td1 = document.createElement("td");
-  var td2 = document.createElement("td");
-  var td3 = document.createElement("td");
-  var t = document.createTextNode(randomRed);
-  var p=document.createTextNode(randomGreen);
-  var g=document.createTextNode(randomBlue);
-  
-  
-  td.appendChild(t);
-  td1.appendChild(p);
-  td2.appendChild(g);
-  td3.style.backgroundColor=(`rgb(${randomRed},${randomGreen},${randomBlue})`);
-  document.getElementById("myTr").appendChild(td);
-  document.getElementById("myTr").appendChild(td1);
-  document.getElementById("myTr").appendChild(td2);
-  document.getElementById("myTr").appendChild(td3);*/
-
-        //Creo que sera algo así
-        let contenidoTD = document.createTextNode();
+            let randomRed = Math.floor(Math.random() * 255 + 1);
+            let randomGreen = Math.floor(Math.random() * 255 + 1);
+            let randomBlue = Math.floor(Math.random() * 255 + 1);
+            
+            let contenidoTD = document.createTextNode(randomRed);
+            tdElement.appendChild(contenidoTD);
+            //ESTO NO FUNCIONA
+            /*if(i=0){
+                let contenidoTD = document.createTextNode(randomRed);
+                tdElement.appendChild(contenidoTD);
+            }else if(i=1){
+                let contenidoTD = document.createTextNode(randomGreen);
+                tdElement.appendChild(contenidoTD);
+            }else if(i=2){
+                let contenidoTD = document.createTextNode(randomBlue);
+                tdElement.appendChild(contenidoTD);
+            }else if(i=3){
+                
+                tdElement.style.backgroundColor=(`rgb(${randomRed},${randomGreen},${randomBlue})`);
+            }*/
+            
+            trElement.appendChild(tdElement);
+        }
+        tBodyElement.appendChild(trElement);
     }
 
+    elementTableID.appendChild(tBodyElement);
 
 }
 
