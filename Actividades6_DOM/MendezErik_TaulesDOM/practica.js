@@ -1,17 +1,29 @@
 function crearTablaColores(tablaColores, numColores) {
 
+    //Guardo en la variable el elementoTabla
     let elementTableID = document.getElementById(tablaColores);
 
     //Numero de columnas
     let numColumnas = elementTableID.rows[0].cells.length;
 
+    //Numero de filas
     let numFilas = document.getElementById(numColores).value;
+
+    let randomRed = Math.floor(Math.random() * 255 + 1);
+    let randomGreen = Math.floor(Math.random() * 255 + 1);
+    let randomBlue = Math.floor(Math.random() * 255 + 1);
+
+    const ColorRadomMap = new Map();
+    ColorRadomMap.set("red",randomRed).set("green",randomGreen).set("blue",randomBlue);
 
     crearTabla(numFilas, numColumnas);
 
+    introducirDatosTabla(tablaColores,ColorRadomMap);
 }
 
-function crearTabla(numFila, numColumna) {
+function crearTabla(numFila, numColumna) { 
+    //Preguntar he cogido el id para poder crear la tabla en si, pero claro, 
+    //no esta como parametro, entocnes no se si lo estare haciendo mal
     let elementTableID = document.getElementById("tablaColores");
 
     let tBodyElement = document.createElement("tbody");
@@ -24,27 +36,6 @@ function crearTabla(numFila, numColumna) {
 
 
             let tdElement = document.createElement("td");
-
-            let randomRed = Math.floor(Math.random() * 255 + 1);
-            let randomGreen = Math.floor(Math.random() * 255 + 1);
-            let randomBlue = Math.floor(Math.random() * 255 + 1);
-            
-            let contenidoTD = document.createTextNode(randomRed);
-            tdElement.appendChild(contenidoTD);
-            //ESTO NO FUNCIONA
-            /*if(i=0){
-                let contenidoTD = document.createTextNode(randomRed);
-                tdElement.appendChild(contenidoTD);
-            }else if(i=1){
-                let contenidoTD = document.createTextNode(randomGreen);
-                tdElement.appendChild(contenidoTD);
-            }else if(i=2){
-                let contenidoTD = document.createTextNode(randomBlue);
-                tdElement.appendChild(contenidoTD);
-            }else if(i=3){
-                
-                tdElement.style.backgroundColor=(`rgb(${randomRed},${randomGreen},${randomBlue})`);
-            }*/
             
             trElement.appendChild(tdElement);
         }
@@ -57,8 +48,22 @@ function crearTabla(numFila, numColumna) {
 
 function introducirDatosTabla(tabla, datos) {
 
+    let elementTableID = document.getElementById(tabla);
 
+    let filas = elementTableID.rows;
 
+    for(let i = 0; i< filas.length;i++){
+
+        let contenidoTD0=document.createTextNode(datos.get("red"));
+        filas.cells[0].appendChild(contenidoTD0);
+
+        let contenidoTD1=document.createTextNode(datos.get("green"));
+        filas.cells[1].appendChild(contenidoTD1);
+
+        let contenidoTD2=document.createTextNode(datos.get("blue"));
+        filas.cells[2].appendChild(contenidoTD2)
+
+    }
 
 }
 

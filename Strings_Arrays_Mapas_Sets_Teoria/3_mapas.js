@@ -176,3 +176,16 @@ for (let valor of provincias.values()) {
     Palencia
     Sevilla
 */
+
+let randomRed = Math.floor(Math.random() * 255 + 1);
+let randomGreen = Math.floor(Math.random() * 255 + 1);
+let randomBlue = Math.floor(Math.random() * 255 + 1);
+
+const ColorRadomMap = new Map();
+ColorRadomMap.set("red",randomRed).set("green",randomGreen).set("blue",randomBlue);
+
+for (let [k,v] of ColorRadomMap){
+
+    console.log(k+" "+v);
+
+}
