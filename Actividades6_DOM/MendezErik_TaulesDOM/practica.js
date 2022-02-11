@@ -9,19 +9,30 @@ function crearTablaColores(tablaColores, numColores) {
     //Numero de filas
     let numFilas = document.getElementById(numColores).value;
 
-    let randomRed = Math.floor(Math.random() * 255 + 1);
-    let randomGreen = Math.floor(Math.random() * 255 + 1);
-    let randomBlue = Math.floor(Math.random() * 255 + 1);
+    let randomRed = 0;
+    let randomGreen = 0;
+    let randomBlue = 0;
 
-    const ColorRadomMap = new Map();
-    ColorRadomMap.set("red",randomRed).set("green",randomGreen).set("blue",randomBlue);
+
+    let CorloresRandoms = [];
+    for (let i = 0; i < numFilas; i++) {
+        CorloresRandoms[i] = new Map();
+        randomRed = Math.floor(Math.random() * 255 + 0);
+        randomGreen = Math.floor(Math.random() * 255 + 0);
+        randomBlue = Math.floor(Math.random() * 255 + 0);
+        CorloresRandoms[i].set("red", randomRed).set("green", randomGreen).set("blue", randomBlue);
+
+    }
+
+    //console.log(CorloresRandoms);
 
     crearTabla(numFilas, numColumnas);
 
-    introducirDatosTabla(tablaColores,ColorRadomMap);
+    introducirDatosTabla(tablaColores, CorloresRandoms);
+
 }
 
-function crearTabla(numFila, numColumna) { 
+function crearTabla(numFila, numColumna) {
     //Preguntar he cogido el id para poder crear la tabla en si, pero claro, 
     //no esta como parametro, entocnes no se si lo estare haciendo mal
     let elementTableID = document.getElementById("tablaColores");
@@ -29,14 +40,14 @@ function crearTabla(numFila, numColumna) {
     let tBodyElement = document.createElement("tbody");
 
     elementTableID.appendChild(tBodyElement);
-   
+
     for (let k = 0; k < numFila; k++) {
         let trElement = document.createElement("tr");
         for (let i = 0; i < numColumna; i++) {
 
 
             let tdElement = document.createElement("td");
-            
+
             trElement.appendChild(tdElement);
         }
         tBodyElement.appendChild(trElement);
@@ -46,23 +57,30 @@ function crearTabla(numFila, numColumna) {
 
 }
 
+
 function introducirDatosTabla(tabla, datos) {
 
     let elementTableID = document.getElementById(tabla);
 
     let filas = elementTableID.rows;
 
-    for(let i = 0; i< filas.length;i++){
+    //console.log(datos);
+    let colors = [];
+    let j = 0;
+    for (let i = 0; i < filas.length-1; i++) {
+        j = 0;
+        colors = datos[i];
 
-        let contenidoTD0=document.createTextNode(datos.get("red"));
-        filas.cells[0].appendChild(contenidoTD0);
+        for (let color of colors.values()) {
+   
+            
+                //Cojo la última columna
+                filas[i + 1].cells[j].innerHTML = color;
+            
 
-        let contenidoTD1=document.createTextNode(datos.get("green"));
-        filas.cells[1].appendChild(contenidoTD1);
-
-        let contenidoTD2=document.createTextNode(datos.get("blue"));
-        filas.cells[2].appendChild(contenidoTD2)
-
+            j++;
+        }
+        filas[i + 1].cells[filas[i].cells.length - 1].style.backgroundColor = `rgb(${colors.get("red")},${colors.get("green")},${colors.get("blue")})`;
     }
 
 }

@@ -162,6 +162,7 @@ provincias.set(1,'Álava').set(28,'Madrid').set(34,'Palencia')
 for (let clave of provincias.keys()) {
     console.log(clave);
 }
+
 for (let valor of provincias.values()) {
     console.log(valor);
 }
@@ -184,8 +185,4 @@ let randomBlue = Math.floor(Math.random() * 255 + 1);
 const ColorRadomMap = new Map();
 ColorRadomMap.set("red",randomRed).set("green",randomGreen).set("blue",randomBlue);
 
-for (let [k,v] of ColorRadomMap){
-
-    console.log(k+" "+v);
-
-}
+console.log(ColorRadomMap.get("red"),ColorRadomMap.get("green"),ColorRadomMap.get("blue"));
