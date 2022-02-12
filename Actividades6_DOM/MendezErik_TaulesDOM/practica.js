@@ -1,3 +1,8 @@
+
+/*########## COMO HACER QUE NO TENGA ENCUENTA LAS LETRAS ############*/
+//Consigo que no muestre alert, pero no consigo que no pete cuando miras la consola
+
+
 /***** Funcion la cual crea la tabla con ayuda de otras dos funciones *****/
 function crearTablaColores(tablaColores, numColores) {
 
@@ -9,6 +14,9 @@ function crearTablaColores(tablaColores, numColores) {
 
     //Numero de filas
     let numFilas = document.getElementById(numColores).value;
+
+    //Eliminar contenido del input
+    document.getElementById(numColores).value = "";
 
     //Creacion y Guardado de colores aleatorios en un array para posteriormente introducrilos en la tabla    
     let randomRed = 0;
@@ -31,11 +39,19 @@ function crearTablaColores(tablaColores, numColores) {
 
     }
 
-    //console.log(CorloresRandoms);
-
-    crearTabla(numFilas, numColumnas);
-
+    //Comprobacion de filas introducidas
+    if (!isNaN(numFilas)) {
+        if (numFilas >= 1 && numFilas <= 20) {
+            crearTabla(numFilas, numColumnas);
+        } else {
+            alert("No se pueden introducir estas filas: " + numFilas);
+        }
+    }else{
+        crearTabla(numFilas, numColumnas);
+    }
     introducirDatosTabla(tablaColores, ColoresRandoms);
+
+
 
 }
 
@@ -81,10 +97,7 @@ function introducirDatosTabla(tabla, datos) {
 
         for (let color of colors.values()) {
 
-
-
             filas[i + 1].cells[j].innerHTML = color;
-
 
             j++;
         }
@@ -103,43 +116,78 @@ function permutarFilas(tablaColores, fila1, fila2) {
     let numF1 = document.getElementById(fila1).value;
     let numF2 = document.getElementById(fila2).value;
 
-    let elementoTbody = document.getElementsByTagName("tbody");
+    //Eliminar contenido de los campos
+    document.getElementById(fila1).value = "";
+    document.getElementById(fila2).value = "";
 
-    //Saco las filas con los valores introducios
-    let row1 = elementTableID.rows[numF1];
-    let row2 = elementTableID.rows[numF2];
-    //let filas = elementTableID.rows;
+    //y al ser como un array debo restar 1, a la posicion introducida
+    //Para que se adecue al numero real
+    numF1 = numF1 - 1;
+    numF2 = numF2 - 1;
+
+    //Saco una fila para coger el valor de las celdas
+    let row = elementTableID.rows[0];
 
     //############ SOLUCION:
     //INSERTAR LA FILA 1 EN LA POSICION DE FILA 2 E IVICEVERSA,
     //SEGUIDAMENTE BORRAR LAS DE ABAJO DE ESTAS POR QUE SERAN LAS REPETIDAS
-    //COMO, ASI = numF1+1 esto seria la posicion de abajo de numF1 entonces borrare esa posicion
 
+    //####### PROBLEMA SOLUCIONADO:
+    // Al querer añadir las dos filas y coger los datos en el mismo bucle
+    // cogia las culumnas vacias acabadas de crear, por eos creo unos array y cojo los valores
+    // de las filas y los introduzco en estos para que asi en el siguiente bucle coger esos valores
+    // y pdoer insertar en las celdas dichos valores
 
-     let newRow1 =elementTableID.tBodies[1].insertRow(numF2);
+    let newRow1 = "";
+    let newRow2 = "";
+    let contenidoRow1Arr = [];
+    let contenidoRow2Arr = [];
     let contenidoRow1 = "";
     let contenidoRow2 = "";
 
-    //contenidoRow1=elementTableID.tBodies[1].rows[numF1-1].cells[1].innerHTML;
-    //console.log(contenidoRow1);
+    // RECORRER LAS CELDAS DE las Filas para recoger sus datos e introducirlos en un array
+    for (let i = 0; i < row.cells.length; i++) {
 
-    // RECORRER LAS CELDAS DE row1 para recoger sus datos e introducirlos
-    // a la nueva fila que ira en la posicion de row2
-    for (let i = 0; i < row1.cells.length-1; i++) {
+        contenidoRow1Arr[i] = elementTableID.tBodies[1].rows[numF1].cells[i].innerHTML;
+        contenidoRow2Arr[i] = elementTableID.tBodies[1].rows[numF2].cells[i].innerHTML;
 
-        contenidoRow1 = elementTableID.tBodies[1].rows[numF1 - 1].cells[i].innerHTML;
-
-        cellsRow1=newRow1.insertCell(i);
-    //Me falta coger el style y ponerselo a la 4 celda
-        cellsRow1.innerHTML=contenidoRow1;
-        // row.insertCell(i);
-        //console.log(cellsRow1);
     }
 
+    //Cojo el fondo de la fila1 
+    let backColorFF1 = elementTableID.tBodies[1].rows[numF1].cells[row.cells.length - 1].style.backgroundColor;
+    //Cojo el fondo de la fila2
+    let backColorFF2 = elementTableID.tBodies[1].rows[numF2].cells[row.cells.length - 1].style.backgroundColor;
 
-    /*for(){
+    //Creo e inserto las nuevas Filas en las posiciones pasadas por parametro
+    newRow1 = elementTableID.tBodies[1].insertRow(numF2);
+    newRow2 = elementTableID.tBodies[1].insertRow(numF1);
 
-    }*/
+    for (let i = 0; i < row.cells.length; i++) {
+
+        contenidoRow1 = contenidoRow1Arr[i];
+        contenidoRow2 = contenidoRow2Arr[i]
+
+        cellsRow1 = newRow1.insertCell(i);
+        cellsRow1.innerHTML = contenidoRow1;
+
+        cellsRow2 = newRow2.insertCell(i);
+        cellsRow2.innerHTML = contenidoRow2;
+
+    }
+
+    //Pongo en la nueva fila1 el fondo
+    newRow1.cells[newRow1.cells.length - 1].style.backgroundColor = backColorFF1;
+
+    //Pongo en la nueva fila2 el fondo
+    newRow2.cells[newRow2.cells.length - 1].style.backgroundColor = backColorFF2;
+
+    //Sumo uno al numero de la fila ya que la fila que quiero borrar esta debajo de esta
+    numF1 = numF1 + 1;
+    numF2 = numF2 + 1;
+
+    //Prosigo a borrar las filas antiguas
+    elementTableID.tBodies[1].deleteRow(numF1);
+    elementTableID.tBodies[1].deleteRow(numF2);
 
 }
 
@@ -150,11 +198,16 @@ function cambiarFondo(tablaColores, filaFondo) {
 
     let numFila = document.getElementById(filaFondo).value;
 
+    //Eliminar contenido del input
+    document.getElementById(filaFondo).value = "";
+
     let numColumnas = elementTableID.rows[numFila].cells.length;
 
     let backColorFF = elementTableID.rows[numFila].cells[numColumnas - 1].style.backgroundColor;
 
     //Paso el rgb para que lo aplique en el fondo de la pagina
     document.body.style.backgroundColor = backColorFF;
+
+
 
 }
