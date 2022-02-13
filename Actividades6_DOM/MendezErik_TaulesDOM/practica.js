@@ -111,7 +111,7 @@ function permutarFilas(tablaColores, fila1, fila2) {
     let numF2 = document.getElementById(fila2).value;
 
 
-    if (!isNaN(numF1) || !isNaN(numF1)) {
+    if (!isNaN(numF1) && !isNaN(numF1 && numF1!=numF2)) {
 
         //Eliminar contenido de los campos
         document.getElementById(fila1).value = "";
