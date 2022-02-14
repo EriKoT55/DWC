@@ -153,7 +153,7 @@ function permutarFilas(tablaColores,fila1,fila2){
         if(numFila1 >= 1 && numFila1 < numFilas && numFila2 >= 1 && numFila2 < numFilas){
 
             // Elemento tbody
-            let tbody = tabla.getElementsByTagName("tbody")[0]
+            let tbody = tabla.getElementsByTagName("tbody")[1]
 
             // Fila 1
             let color1 = tabla.rows[numFila1]

@@ -100,7 +100,7 @@ function introducirDatosTabla(tabla, datos) {
     }
 
 }
-/* INTENTO DE HACERLO CON BEFORE, NO CONSEGUIDO
+// INTENTO DE HACERLO CON BEFORE, NO CONSEGUIDO
 // Funcion la cual se introducen las filas deseadas y las cambia de posicion 
 function permutarFilas(tablaColores, fila1, fila2) {
 
@@ -110,38 +110,35 @@ function permutarFilas(tablaColores, fila1, fila2) {
     let numF1 = document.getElementById(fila1).value;
     let numF2 = document.getElementById(fila2).value;
 
-    if (!isNaN(numF1) && !isNaN(numF1 && numF1!=numF2)) {
+    if (!isNaN(numF1) && !isNaN(numF1 && numF1 != numF2)) {
 
-      //Eliminar contenido de los campos
-      document.getElementById(fila1).value = "";
-      document.getElementById(fila2).value = "";
+        //Eliminar contenido de los campos
+        document.getElementById(fila1).value = "";
+        document.getElementById(fila2).value = "";
 
-        let tBody=elementTableID.tBodies[1];
+        let tBody = elementTableID.tBodies[1];
 
-        let numRows=tBody.rows.length;
-
-        let rowsArr=[];
-
-        for(let i=0;i<numRows;i++){
-
-            rowsArr[i]=tBody.rows[i];
-
-        }
-        //console.log(rows[numF1-1]);
-        //Guardo la fila
-        let posRow1=rowsArr[numF1-1];
         //Guardo la posicion de la fila
-        let row1=tBody.rows[numF1-1];
-
-        let posRow2=rowsArr[numF2-1];
-        let row2=tBody.rows[numF2-1];
+        let posRow1 = tBody.rows[numF1-1];
         
-        
+        //Guardo la fila
+        let nodeRow1= tBody.childNodes[numF1-1];
+        let row1 = nodeRow1.cloneNode(true);
 
-       tBody.insertBefore(row1,row2);
+        //Guardo la posicion de la fila 
+        let posRow2 = tBody.rows[numF2-1];
+        //Guardo la fila
+        let nodeRow2= tBody.childNodes[numF2-1];
+        let row2 = nodeRow2.cloneNode(true);
+       
 
-       tBody.insertBefore(row2,row1);
+        //Guardo la posicion de la fila
+        tBody.insertBefore(row1, posRow2);
+        //Guardo la fila
+        tBody.insertBefore(row2, posRow1);
 
+        tBody.deleteRow(numF1);
+        tBody.deleteRow(numF2);
 
     } else {
         //Eliminar contenido de los campos
@@ -150,9 +147,9 @@ function permutarFilas(tablaColores, fila1, fila2) {
     }
 
 }
-*/
 
-// FUNCION OBSOLETA DEMASIADO ROLLO, PERO FUNCIONA ***** descomentar si la quieres probar
+
+ /*FUNCION OBSOLETA DEMASIADO ROLLO, PERO FUNCIONA ***** descomentar si la quieres probar
 // Funcion la cual se introducen las filas deseadas y las cambia de posicion 
 function permutarFilas(tablaColores, fila1, fila2) {
 
@@ -243,7 +240,7 @@ function permutarFilas(tablaColores, fila1, fila2) {
         document.getElementById(fila2).value = "";
     }
 }
-// */
+ */
 
 /***** Funcion la cual se le pasa un numero de fila de la tabla y lo pone de fondo *****/
 function cambiarFondo(tablaColores, filaFondo) {
