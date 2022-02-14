@@ -100,8 +100,60 @@ function introducirDatosTabla(tabla, datos) {
     }
 
 }
+/* INTENTO DE HACERLO CON BEFORE, NO CONSEGUIDO
+// Funcion la cual se introducen las filas deseadas y las cambia de posicion 
+function permutarFilas(tablaColores, fila1, fila2) {
 
-/***** Funcion la cual se introducen las filas deseadas y las cambia de posicion *****/
+    let elementTableID = document.getElementById(tablaColores);
+
+    //Cojo los valores pasados por el input
+    let numF1 = document.getElementById(fila1).value;
+    let numF2 = document.getElementById(fila2).value;
+
+    if (!isNaN(numF1) && !isNaN(numF1 && numF1!=numF2)) {
+
+      //Eliminar contenido de los campos
+      document.getElementById(fila1).value = "";
+      document.getElementById(fila2).value = "";
+
+        let tBody=elementTableID.tBodies[1];
+
+        let numRows=tBody.rows.length;
+
+        let rowsArr=[];
+
+        for(let i=0;i<numRows;i++){
+
+            rowsArr[i]=tBody.rows[i];
+
+        }
+        //console.log(rows[numF1-1]);
+        //Guardo la fila
+        let posRow1=rowsArr[numF1-1];
+        //Guardo la posicion de la fila
+        let row1=tBody.rows[numF1-1];
+
+        let posRow2=rowsArr[numF2-1];
+        let row2=tBody.rows[numF2-1];
+        
+        
+
+       tBody.insertBefore(row1,row2);
+
+       tBody.insertBefore(row2,row1);
+
+
+    } else {
+        //Eliminar contenido de los campos
+        document.getElementById(fila1).value = "";
+        document.getElementById(fila2).value = "";
+    }
+
+}
+*/
+
+// FUNCION OBSOLETA DEMASIADO ROLLO, PERO FUNCIONA ***** descomentar si la quieres probar
+// Funcion la cual se introducen las filas deseadas y las cambia de posicion 
 function permutarFilas(tablaColores, fila1, fila2) {
 
     let elementTableID = document.getElementById(tablaColores);
@@ -191,6 +243,7 @@ function permutarFilas(tablaColores, fila1, fila2) {
         document.getElementById(fila2).value = "";
     }
 }
+// */
 
 /***** Funcion la cual se le pasa un numero de fila de la tabla y lo pone de fondo *****/
 function cambiarFondo(tablaColores, filaFondo) {
