@@ -11,7 +11,7 @@ function crearTablaColores(tablaColores, numColores) {
     let numFilas = document.getElementById(numColores).value;
 
     //Eliminar contenido del input
-    document.getElementById(numColores).value = "";
+    vaciarInputs();
 
     //Creacion y Guardado de colores aleatorios en un array para posteriormente introducrilos en la tabla    
     let randomRed = 0;
@@ -113,8 +113,7 @@ function permutarFilas(tablaColores, fila1, fila2) {
     if (!isNaN(numF1) && !isNaN(numF1 && numF1 != numF2)) {
 
         //Eliminar contenido de los campos
-        document.getElementById(fila1).value = "";
-        document.getElementById(fila2).value = "";
+        vaciarInputs()
 
         let tBody = elementTableID.tBodies[1];
 
@@ -142,12 +141,10 @@ function permutarFilas(tablaColores, fila1, fila2) {
 
     } else {
         //Eliminar contenido de los campos
-        document.getElementById(fila1).value = "";
-        document.getElementById(fila2).value = "";
+        vaciarInputs();
     }
 
 }
-
 
  /*FUNCION OBSOLETA DEMASIADO ROLLO, PERO FUNCIONA ***** descomentar si la quieres probar
 // Funcion la cual se introducen las filas deseadas y las cambia de posicion 
@@ -250,8 +247,9 @@ function cambiarFondo(tablaColores, filaFondo) {
     let numFila = document.getElementById(filaFondo).value;
 
     if (!isNaN(numFila)) {
+
         //Eliminar contenido del input
-        document.getElementById(filaFondo).value = "";
+        vaciarInputs();
 
         let numColumnas = elementTableID.rows[numFila].cells.length;
 
@@ -261,8 +259,22 @@ function cambiarFondo(tablaColores, filaFondo) {
         document.body.style.backgroundColor = backColorFF;
     } else {
         //Eliminar contenido del input
-        document.getElementById(filaFondo).value = "";
+        vaciarInputs();
     }
 
+}
+
+
+function vaciarInputs(){
+
+    let inputs = document.getElementsByTagName("input");
+
+    for(let i=0;i<inputs.length;i++){
+
+        if(inputs[i].type=="text"){
+            inputs[i].value=null;
+        }
+
+    }
 
 }
