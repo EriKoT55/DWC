@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function(event) {
     let textarea = document.getElementById('areatexto');
     let nodoParrafo = document.createElement('p');
