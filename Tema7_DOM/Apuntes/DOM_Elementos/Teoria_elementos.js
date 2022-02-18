@@ -59,7 +59,7 @@ children	//Devuelve una colección del elemento secundario de un elemento (exclu
 
 
 cloneNode   //Clona un elemento
-S
+
     //Copie un elemento <li> de "myList2" a "myList1":
     const node = document.getElementById("myList2").lastChild;
     const clone = node.cloneNode(true);
