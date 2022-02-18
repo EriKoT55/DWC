@@ -1,21 +1,71 @@
 function generarDecimo(divContenedor) {
-
+    //Cojo el nodeList
     let contenidoDivCont = document.getElementById(divContenedor);
 
-    let rand1= Math.floor(Math.random*10+1);
-    let rand2= Math.floor(Math.random*10+1);
-    let rand3= Math.floor(Math.random*10+1);
+    //Inicializo variable para el random
+    let numRand_loto = 0;
 
+    //Cuanto los divs que hay 
+    let numeroDivs = contenidoDivCont.children.length;
 
-    //Crear un elemento p para meter los numeros random
-    console.log(contenidoDivCont.children[0]);
-    let pDiv1=document.createElement("p");
+    //Creo el array para guardar los numeros random
+    let randomNums = [];
 
-    contenidoDivCont.children[0].insert(pDiv1);    
+    //Hago un bucle para introducir los numeros en los divs y asi no hacer código espaguetti
+    for (let i = 0; i < numeroDivs; i++) {
+
+        numRand_loto = Math.floor(Math.random() * 10 + 1);
+
+        randomNums[i] = numRand_loto;
+
+        contenidoDivCont.children[i].innerHTML = randomNums[i];
+
+    }
+
+    let elementoSorteo = document.getElementById("realizarSorteo");
+
+    //console.log(elementoSorteo);
+
+    elementoSorteo.removeAttribute("disabled");
 
 }
 
+
 function realizarSorteo() {
+
+
+    let divNumSorteo = document.getElementById("numeroSorteo");
+
+    let numRandomSorteo = Math.floor(Math.random() * 10 + 1);
+
+    divNumSorteo.children[0].innerHTML = numRandomSorteo;
+
+    let numSorteo = divNumSorteo.children[0].innerHTML;
+
+    //Cojo el nodeList
+    let contenidoDivCont = document.getElementById("divContenedor");
+
+    //Cuento los divs que hay 
+    let numeroDivs = contenidoDivCont.children.length;
+
+    let childrensToDiv = contenidoDivCont.children;
+
+    console.log(numSorteo);
+
+    for (let i = 0; i < numeroDivs; i++) {
+
+        if (numSorteo == childrensToDiv[i].innerHTML) {
+
+            childrensToDiv[i].style.color = "green";
+
+        }else{
+
+            childrensToDiv[i].style.color = "red";
+            
+        }
+
+    }
+
 
 
 
