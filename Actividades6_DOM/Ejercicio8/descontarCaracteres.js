@@ -8,3 +8,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
     document.getElementById('areaFormulario').appendChild(nodoParrafo);
 });
 
+function insertarNumeroCaracteres(parrafo, areaTexto){
+
+    let textArea= document.getElementById(areaTexto);
+
+    let p = document.getElementById(parrafo);
+
+    let maxLength=textArea.getAttribute("maxlength");
+
+    let numCaracteres= maxLength-textArea.value.length;
+
+    p.innerHTML="Pots escriure "+numCaracteres+" caracteres";
+
+}
