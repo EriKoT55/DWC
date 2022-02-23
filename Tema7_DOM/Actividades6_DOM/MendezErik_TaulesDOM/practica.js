@@ -47,6 +47,7 @@ function crearTablaColores(tablaColores, numColores) {
 
 }
 
+
 /***** Funcion la cual crea la tabla sin datos *****/
 function crearTabla(numFila, numColumna) {
 
